@@ -15,6 +15,7 @@ KManager.action :project_plan do
         todo(title: 'add handlebarsjs file and load into snapshot')
         todo(title: 'get handlebars working with simple templates')
         todo(title: 'write a simple handlebars help in ruby')
+        todo(title: 'add project plan markdown to this gem and template')
       end
       .page('To Do', theme: :style_02, margin_left: 0, margin_top: 0) do
 
