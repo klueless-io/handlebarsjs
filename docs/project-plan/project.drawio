@@ -1,0 +1,41 @@
+<mxfile host="5eX">
+  <diagram id="URK" name="In progress">
+    <mxGraphModel dx="0" dy="0" background="#FFFAFA" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="page_root_URK" parent="URK"/>
+        <mxCell id="node_root_URK" parent="page_root_URK"/>
+        <mxCell id="URK-1" value="DrawIO DSL" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fontColor=#1F2D3D;text;fontSize=28;fontStyle=1;fillColor=none" vertex="1" parent="node_root_URK">
+          <mxGeometry x="300" y="0" width="400" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="URK-3" value="add miniracer to gem and test sample JS with snapshot" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#333333" vertex="1" parent="node_root_URK">
+          <mxGeometry x="10" y="10" width="300" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="URK-4" value="add handlebarsjs file and load into snapshot" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#333333" vertex="1" parent="node_root_URK">
+          <mxGeometry x="330" y="10" width="300" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="URK-5" value="get handlebars working with simple templates" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#333333" vertex="1" parent="node_root_URK">
+          <mxGeometry x="650" y="10" width="300" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="URK-6" value="write a simple handlebars help in ruby" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#333333" vertex="1" parent="node_root_URK">
+          <mxGeometry x="10" y="90" width="300" height="60" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="Wz9" name="To Do">
+    <mxGraphModel dx="0" dy="0" background="#FFFAFA" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="page_root_Wz9" parent="Wz9"/>
+        <mxCell id="node_root_Wz9" parent="page_root_Wz9"/>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="XYc" name="Done">
+    <mxGraphModel dx="0" dy="0" background="#FFFAFA" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="page_root_XYc" parent="XYc"/>
+        <mxCell id="node_root_XYc" parent="page_root_XYc"/>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -28,7 +28,7 @@ gem install handlebarsjs
 
 As a Ruby Developer, I want to use handlebarsjs from my ruby applications, so that I can easily access javascript templating
 
-See all [stories](./STORIES.md)
+See [project plan](./docs/project-plan.md)
 
 
 ## Usage
