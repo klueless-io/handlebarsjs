@@ -1,3 +1,10 @@
+## [0.1.1](https://github.com/klueless-io/handlebarsjs/compare/v0.1.0...v0.1.1) (2022-04-17)
+
+
+### Bug Fixes
+
+* update docs ([f2912bc](https://github.com/klueless-io/handlebarsjs/commit/f2912bc287afc3ef839ace298ebd7c3aad7e1eaa))
+
 # [0.1.0](https://github.com/klueless-io/handlebarsjs/compare/v0.0.1...v0.1.0) (2022-04-17)
 
 
