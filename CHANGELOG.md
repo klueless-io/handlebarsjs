@@ -1,3 +1,11 @@
+## [0.1.2](https://github.com/klueless-io/handlebarsjs/compare/v0.1.1...v0.1.2) (2022-07-01)
+
+
+### Bug Fixes
+
+* add snapshot builder ([f4dd8e8](https://github.com/klueless-io/handlebarsjs/commit/f4dd8e8e6a1c40da3e232bce93a33f252cc02a08))
+* add snapshot builder ([c1e31c7](https://github.com/klueless-io/handlebarsjs/commit/c1e31c7e0f4402873fcbd1c3b065564bcb9457a4))
+
 ## [0.1.1](https://github.com/klueless-io/handlebarsjs/compare/v0.1.0...v0.1.1) (2022-04-17)
 
 
