@@ -1,0 +1,741 @@
+{
+  "host": "BiS",
+  "theme": "style_04",
+  "palette": {
+    "fill_color": "#ffe6cc",
+    "stroke_color": "#d79b00",
+    "font_color": "#333333",
+    "gradient": null
+  },
+  "style": {
+    "white_space": "wrap",
+    "html": 1,
+    "rounded": null,
+    "shadow": null,
+    "sketch": null,
+    "glass": null
+  },
+  "pages": [
+    {
+      "id": "j0L",
+      "active": true,
+      "name": "Domain Modal",
+      "position_x": 0,
+      "position_y": 580,
+      "theme": "style_04",
+      "bg_theme": "snow",
+      "palette": {
+        "fill_color": "#ffe6cc",
+        "stroke_color": "#d79b00",
+        "font_color": "#333333",
+        "gradient": null
+      },
+      "style": {
+        "white_space": "wrap",
+        "html": 1,
+        "rounded": 0,
+        "shadow": null,
+        "sketch": null,
+        "glass": null
+      },
+      "settings": {
+        "margin_left": 0,
+        "margin_top": 0,
+        "grid": 0,
+        "grid_size": 10,
+        "guides": 1,
+        "tooltips": 1,
+        "connect": 1,
+        "arrows": 1,
+        "fold": 1,
+        "page_no": 1,
+        "page_scale": 1,
+        "page_width": 1169,
+        "page_height": 827,
+        "background": "#fafafa",
+        "page_shadow": 0,
+        "math": 0
+      },
+      "nodes": [
+        {
+          "id": "page_root_j0L",
+          "parent_id": "j0L",
+          "classification": "anchor",
+          "key": "page_root",
+          "nodes": [
+            {
+              "id": "node_root_j0L",
+              "parent_id": "page_root_j0L",
+              "classification": "anchor",
+              "key": "node_root",
+              "nodes": [
+                {
+                  "id": "rule-2",
+                  "parent_id": "node_root_j0L",
+                  "classification": "layout_rule",
+                  "key": "grid_layout",
+                  "anchor_x": 0,
+                  "anchor_y": 0,
+                  "direction": "horizontal",
+                  "wrap_at": 6,
+                  "grid_w": 180,
+                  "grid_h": 180,
+                  "cell_no": 1
+                },
+                {
+                  "id": "j0L-2",
+                  "parent_id": "node_root_j0L",
+                  "classification": "shape",
+                  "key": "klass",
+                  "x": 10,
+                  "y": 10,
+                  "w": 160,
+                  "h": 160,
+                  "style": "whiteSpace=wrap;html=1;rounded=0;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica",
+                  "value": "<p style=\"margin:0px;margin-left:4px;margin-bottom:4px;text-align:center\"><b>Flow</b></p><hr size=\"1\"/><p style=\"margin:0px;margin-left:4px;margin-bottom:4px\">attach handlebars-4.7.7.js</p><p style=\"margin:0px;margin-left:4px;margin-bottom:4px\">attach handlebars-custom.js</p>",
+                  "meta_data": {
+                    "items": [
+                      {
+                        "type": "class",
+                        "name": "Flow",
+                        "description": null,
+                        "namespace": null
+                      },
+                      {
+                        "type": "field",
+                        "name": "attach handlebars-4.7.7.js",
+                        "return_type": null
+                      },
+                      {
+                        "type": "field",
+                        "name": "attach handlebars-custom.js",
+                        "return_type": null
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "j0L-3",
+                  "parent_id": "node_root_j0L",
+                  "classification": "shape",
+                  "key": "klass",
+                  "x": 190,
+                  "y": 10,
+                  "w": 160,
+                  "h": 160,
+                  "style": "whiteSpace=wrap;html=1;rounded=0;fillColor=#ffe6cc;strokeColor=#d79b00;fontColor=#333333;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica",
+                  "value": "<p style=\"margin:0px;margin-left:4px;margin-bottom:4px;text-align:center\"><b>Configuration</b></p><hr size=\"1\"/><p style=\"margin:0px;margin-left:4px;margin-bottom:4px\">javascript</p><p style=\"margin:0px;margin-left:4px;margin-bottom:4px\">javascript_file</p>",
+                  "meta_data": {
+                    "items": [
+                      {
+                        "type": "class",
+                        "name": "Configuration",
+                        "description": null,
+                        "namespace": null
+                      },
+                      {
+                        "type": "field",
+                        "name": "javascript",
+                        "return_type": null
+                      },
+                      {
+                        "type": "field",
+                        "name": "javascript_file",
+                        "return_type": null
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "j0L-4",
+                  "parent_id": "node_root_j0L",
+                  "classification": "shape",
+                  "key": "klass",
+                  "x": 370,
+                  "y": 10,
+                  "w": 160,
+                  "h": 160,
+                  "style": "whiteSpace=wrap;html=1;rounded=0;fillColor=#ffe6cc;strokeColor=#d79b00;fontColor=#333333;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica",
+                  "value": "<p style=\"margin:0px;margin-left:4px;margin-bottom:4px;text-align:center\"><b>Manager</b></p><hr size=\"1\"/><p style=\"margin:0px;margin-left:4px;margin-bottom:4px\">snapshot: MR::Snapshot</p><hr size=\"1\"/><p style=\"margin:0px;margin-left:4px;margin-bottom:4px\">load_javascript()</p><p style=\"margin:0px;margin-left:4px;margin-bottom:4px\">register_helper()</p><p style=\"margin:0px;margin-left:4px;margin-bottom:4px\">register_partial()</p><p style=\"margin:0px;margin-left:4px;margin-bottom:4px\">compile_template()</p><p style=\"margin:0px;margin-left:4px;margin-bottom:4px\">execute_template()</p><p style=\"margin:0px;margin-left:4px;margin-bottom:4px\">execute_javascript()</p>",
+                  "meta_data": {
+                    "items": [
+                      {
+                        "type": "class",
+                        "name": "Manager",
+                        "description": null,
+                        "namespace": null
+                      },
+                      {
+                        "type": "field",
+                        "name": "snapshot",
+                        "return_type": "MR::Snapshot"
+                      },
+                      {
+                        "type": "method",
+                        "name": "load_javascript",
+                        "return_type": null
+                      },
+                      {
+                        "type": "method",
+                        "name": "register_helper",
+                        "return_type": null
+                      },
+                      {
+                        "type": "method",
+                        "name": "register_partial",
+                        "return_type": null
+                      },
+                      {
+                        "type": "method",
+                        "name": "compile_template",
+                        "return_type": null
+                      },
+                      {
+                        "type": "method",
+                        "name": "execute_template",
+                        "return_type": null
+                      },
+                      {
+                        "type": "method",
+                        "name": "execute_javascript",
+                        "return_type": null
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "j0L-5",
+                  "parent_id": "node_root_j0L",
+                  "classification": "shape",
+                  "key": "klass",
+                  "x": 550,
+                  "y": 10,
+                  "w": 160,
+                  "h": 160,
+                  "style": "whiteSpace=wrap;html=1;rounded=0;fillColor=#ffe6cc;strokeColor=#d79b00;fontColor=#333333;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica",
+                  "value": "<p style=\"margin:0px;margin-left:4px;margin-bottom:4px;text-align:center\"><b>Context</b></p><hr size=\"1\"/>",
+                  "meta_data": {
+                    "items": [
+                      {
+                        "type": "class",
+                        "name": "Context",
+                        "description": null,
+                        "namespace": null
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "j0L-6",
+                  "parent_id": "node_root_j0L",
+                  "classification": "shape",
+                  "key": "square",
+                  "x": 805,
+                  "y": 85,
+                  "w": 10,
+                  "h": 10,
+                  "style": "whiteSpace=wrap;html=1;rounded=0;fillColor=#fafafa;strokeColor=#fafafa;fontColor=#fafafa",
+                  "value": "",
+                  "meta_data": {
+                    "items": [
+                      {
+                        "type": "title",
+                        "content": ""
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "j0L-7",
+                  "parent_id": "node_root_j0L",
+                  "classification": "shape",
+                  "key": "square",
+                  "x": 985,
+                  "y": 85,
+                  "w": 10,
+                  "h": 10,
+                  "style": "whiteSpace=wrap;html=1;rounded=0;fillColor=#fafafa;strokeColor=#fafafa;fontColor=#fafafa",
+                  "value": "",
+                  "meta_data": {
+                    "items": [
+                      {
+                        "type": "title",
+                        "content": ""
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "rule-2",
+                  "parent_id": "node_root_j0L",
+                  "classification": "layout_rule",
+                  "key": "grid_layout",
+                  "anchor_x": 0,
+                  "anchor_y": 180,
+                  "direction": "horizontal",
+                  "wrap_at": 6,
+                  "grid_w": 100,
+                  "grid_h": 100,
+                  "cell_no": 1
+                },
+                {
+                  "id": "a1",
+                  "parent_id": "node_root_j0L",
+                  "classification": "shape",
+                  "key": "square",
+                  "x": 10,
+                  "y": 190,
+                  "w": 80,
+                  "h": 80,
+                  "style": "whiteSpace=wrap;html=1;rounded=0;fillColor=#ffe6cc;strokeColor=#d79b00;fontColor=#333333",
+                  "value": "KManager -> KBuilder",
+                  "meta_data": {
+                    "items": [
+                      {
+                        "type": "title",
+                        "content": "KManager -> KBuilder"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "a2",
+                  "parent_id": "node_root_j0L",
+                  "classification": "shape",
+                  "key": "square",
+                  "x": 110,
+                  "y": 190,
+                  "w": 80,
+                  "h": 80,
+                  "style": "whiteSpace=wrap;html=1;rounded=0;fillColor=#ffe6cc;strokeColor=#d79b00;fontColor=#333333",
+                  "value": "Handlebars-Helpers (ruby)",
+                  "meta_data": {
+                    "items": [
+                      {
+                        "type": "title",
+                        "content": "Handlebars-Helpers (ruby)"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "a3",
+                  "parent_id": "node_root_j0L",
+                  "classification": "shape",
+                  "key": "square",
+                  "x": 210,
+                  "y": 190,
+                  "w": 80,
+                  "h": 80,
+                  "style": "whiteSpace=wrap;html=1;rounded=0;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#333333",
+                  "value": "HandlebarsJS (ruby)",
+                  "meta_data": {
+                    "items": [
+                      {
+                        "type": "title",
+                        "content": "HandlebarsJS (ruby)"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "a4",
+                  "parent_id": "node_root_j0L",
+                  "classification": "shape",
+                  "key": "square",
+                  "x": 310,
+                  "y": 190,
+                  "w": 80,
+                  "h": 80,
+                  "style": "whiteSpace=wrap;html=1;rounded=0;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#333333",
+                  "value": "Mini Racer",
+                  "meta_data": {
+                    "items": [
+                      {
+                        "type": "title",
+                        "content": "Mini Racer"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "a5",
+                  "parent_id": "node_root_j0L",
+                  "classification": "shape",
+                  "key": "square",
+                  "x": 410,
+                  "y": 190,
+                  "w": 80,
+                  "h": 80,
+                  "style": "whiteSpace=wrap;html=1;rounded=0;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#333333",
+                  "value": "Handlebars (ruby)",
+                  "meta_data": {
+                    "items": [
+                      {
+                        "type": "title",
+                        "content": "Handlebars (ruby)"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "a6",
+                  "parent_id": "node_root_j0L",
+                  "classification": "shape",
+                  "key": "square",
+                  "x": 510,
+                  "y": 190,
+                  "w": 80,
+                  "h": 80,
+                  "style": "whiteSpace=wrap;html=1;rounded=0;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#333333",
+                  "value": "The Ruby Racer",
+                  "meta_data": {
+                    "items": [
+                      {
+                        "type": "title",
+                        "content": "The Ruby Racer"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "a7",
+                  "parent_id": "node_root_j0L",
+                  "classification": "shape",
+                  "key": "square",
+                  "x": 10,
+                  "y": 290,
+                  "w": 80,
+                  "h": 80,
+                  "style": "whiteSpace=wrap;html=1;rounded=0;fillColor=#1ba1e2;strokeColor=#006EAF;fontColor=#ffffff",
+                  "value": "Node V8 engine",
+                  "meta_data": {
+                    "items": [
+                      {
+                        "type": "title",
+                        "content": "Node V8 engine"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "a8",
+                  "parent_id": "node_root_j0L",
+                  "classification": "shape",
+                  "key": "square",
+                  "x": 110,
+                  "y": 290,
+                  "w": 80,
+                  "h": 80,
+                  "style": "whiteSpace=wrap;html=1;rounded=0;fillColor=#ffe6cc;strokeColor=#d79b00;fontColor=#333333",
+                  "value": "Handlebars.js (javascript)",
+                  "meta_data": {
+                    "items": [
+                      {
+                        "type": "title",
+                        "content": "Handlebars.js (javascript)"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "j0L-17",
+                  "parent_id": "node_root_j0L",
+                  "classification": "shape",
+                  "key": "solid",
+                  "x": 0,
+                  "y": 0,
+                  "w": 0,
+                  "h": 0,
+                  "style": "edgeStyle=orthogonalEdgeStyle;curved=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;startArrow=none;startFill=1;endArrow=open;endFill=1;whiteSpace=wrap;html=1;rounded=0;fillColor=#ffe6cc;strokeColor=#d79b00",
+                  "value": "",
+                  "meta_data": {
+                    "items": [
+                      {
+                        "type": "title",
+                        "content": ""
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "j0L-18",
+                  "parent_id": "node_root_j0L",
+                  "classification": "shape",
+                  "key": "solid",
+                  "x": 0,
+                  "y": 0,
+                  "w": 0,
+                  "h": 0,
+                  "style": "edgeStyle=orthogonalEdgeStyle;curved=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;startArrow=none;startFill=1;endArrow=open;endFill=1;whiteSpace=wrap;html=1;rounded=0;fillColor=#ffe6cc;strokeColor=#d79b00",
+                  "value": "",
+                  "meta_data": {
+                    "items": [
+                      {
+                        "type": "title",
+                        "content": ""
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "j0L-19",
+                  "parent_id": "node_root_j0L",
+                  "classification": "shape",
+                  "key": "solid",
+                  "x": 0,
+                  "y": 0,
+                  "w": 0,
+                  "h": 0,
+                  "style": "edgeStyle=orthogonalEdgeStyle;curved=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;startArrow=none;startFill=1;endArrow=open;endFill=1;whiteSpace=wrap;html=1;rounded=0;fillColor=#ffe6cc;strokeColor=#d79b00",
+                  "value": "",
+                  "meta_data": {
+                    "items": [
+                      {
+                        "type": "title",
+                        "content": ""
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "j0L-20",
+                  "parent_id": "node_root_j0L",
+                  "classification": "shape",
+                  "key": "solid",
+                  "x": 0,
+                  "y": 0,
+                  "w": 0,
+                  "h": 0,
+                  "style": "edgeStyle=orthogonalEdgeStyle;curved=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;startArrow=none;startFill=1;endArrow=open;endFill=1;whiteSpace=wrap;html=1;rounded=0;fillColor=#ffe6cc;strokeColor=#d79b00",
+                  "value": "",
+                  "meta_data": {
+                    "items": [
+                      {
+                        "type": "title",
+                        "content": ""
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "j0L-21",
+                  "parent_id": "node_root_j0L",
+                  "classification": "shape",
+                  "key": "solid",
+                  "x": 0,
+                  "y": 0,
+                  "w": 0,
+                  "h": 0,
+                  "style": "edgeStyle=orthogonalEdgeStyle;curved=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;startArrow=none;startFill=1;endArrow=open;endFill=1;whiteSpace=wrap;html=1;rounded=0;fillColor=#ffe6cc;strokeColor=#d79b00",
+                  "value": "",
+                  "meta_data": {
+                    "items": [
+                      {
+                        "type": "title",
+                        "content": ""
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "j0L-22",
+                  "parent_id": "node_root_j0L",
+                  "classification": "shape",
+                  "key": "solid",
+                  "x": 0,
+                  "y": 0,
+                  "w": 0,
+                  "h": 0,
+                  "style": "edgeStyle=orthogonalEdgeStyle;curved=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;startArrow=none;startFill=1;endArrow=open;endFill=1;whiteSpace=wrap;html=1;rounded=0;fillColor=#ffe6cc;strokeColor=#d79b00",
+                  "value": "",
+                  "meta_data": {
+                    "items": [
+                      {
+                        "type": "title",
+                        "content": ""
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "j0L-23",
+                  "parent_id": "node_root_j0L",
+                  "classification": "shape",
+                  "key": "solid",
+                  "x": 0,
+                  "y": 0,
+                  "w": 0,
+                  "h": 0,
+                  "style": "edgeStyle=orthogonalEdgeStyle;curved=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;startArrow=none;startFill=1;endArrow=open;endFill=1;whiteSpace=wrap;html=1;rounded=0;fillColor=#ffe6cc;strokeColor=#d79b00",
+                  "value": "",
+                  "meta_data": {
+                    "items": [
+                      {
+                        "type": "title",
+                        "content": ""
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "j0L-24",
+                  "parent_id": "node_root_j0L",
+                  "classification": "shape",
+                  "key": "solid",
+                  "x": 0,
+                  "y": 0,
+                  "w": 0,
+                  "h": 0,
+                  "style": "edgeStyle=orthogonalEdgeStyle;curved=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;startArrow=none;startFill=1;endArrow=open;endFill=1;whiteSpace=wrap;html=1;rounded=0;fillColor=#ffe6cc;strokeColor=#d79b00",
+                  "value": "",
+                  "meta_data": {
+                    "items": [
+                      {
+                        "type": "title",
+                        "content": ""
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "j0L-25",
+                  "parent_id": "node_root_j0L",
+                  "classification": "shape",
+                  "key": "square",
+                  "x": 245,
+                  "y": 325,
+                  "w": 10,
+                  "h": 10,
+                  "style": "whiteSpace=wrap;html=1;rounded=0;fillColor=#fafafa;strokeColor=#fafafa;fontColor=#fafafa",
+                  "value": "",
+                  "meta_data": {
+                    "items": [
+                      {
+                        "type": "title",
+                        "content": ""
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "j0L-26",
+                  "parent_id": "node_root_j0L",
+                  "classification": "shape",
+                  "key": "square",
+                  "x": 345,
+                  "y": 325,
+                  "w": 10,
+                  "h": 10,
+                  "style": "whiteSpace=wrap;html=1;rounded=0;fillColor=#fafafa;strokeColor=#fafafa;fontColor=#fafafa",
+                  "value": "",
+                  "meta_data": {
+                    "items": [
+                      {
+                        "type": "title",
+                        "content": ""
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "j0L-27",
+                  "parent_id": "node_root_j0L",
+                  "classification": "shape",
+                  "key": "square",
+                  "x": 445,
+                  "y": 325,
+                  "w": 10,
+                  "h": 10,
+                  "style": "whiteSpace=wrap;html=1;rounded=0;fillColor=#fafafa;strokeColor=#fafafa;fontColor=#fafafa",
+                  "value": "",
+                  "meta_data": {
+                    "items": [
+                      {
+                        "type": "title",
+                        "content": ""
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "j0L-28",
+                  "parent_id": "node_root_j0L",
+                  "classification": "shape",
+                  "key": "square",
+                  "x": 545,
+                  "y": 325,
+                  "w": 10,
+                  "h": 10,
+                  "style": "whiteSpace=wrap;html=1;rounded=0;fillColor=#fafafa;strokeColor=#fafafa;fontColor=#fafafa",
+                  "value": "",
+                  "meta_data": {
+                    "items": [
+                      {
+                        "type": "title",
+                        "content": ""
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "rule-2",
+                  "parent_id": "node_root_j0L",
+                  "classification": "layout_rule",
+                  "key": "grid_layout",
+                  "anchor_x": 0,
+                  "anchor_y": 380,
+                  "direction": "horizontal",
+                  "wrap_at": 1,
+                  "grid_w": 100,
+                  "grid_h": 100,
+                  "cell_no": 1
+                },
+                {
+                  "id": "j0L-30",
+                  "parent_id": "node_root_j0L",
+                  "classification": "shape",
+                  "key": "group",
+                  "x": 25,
+                  "y": 405,
+                  "w": 50,
+                  "h": 50,
+                  "style": "whiteSpace=wrap;html=1;rounded=0;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;fontSize=20;verticalAlign=top",
+                  "value": "Domain Model",
+                  "meta_data": {
+                    "items": [
+                      {
+                        "type": "title",
+                        "content": "Domain Model"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "j0L-31",
+                  "parent_id": "node_root_j0L",
+                  "classification": "shape",
+                  "key": "group",
+                  "x": 25,
+                  "y": 505,
+                  "w": 50,
+                  "h": 50,
+                  "style": "whiteSpace=wrap;html=1;rounded=0;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;fontSize=20;verticalAlign=top",
+                  "value": "GEM Architecture Flow",
+                  "meta_data": {
+                    "items": [
+                      {
+                        "type": "title",
+                        "content": "GEM Architecture Flow"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

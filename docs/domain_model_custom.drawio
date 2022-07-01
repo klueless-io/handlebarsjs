@@ -1,0 +1,61 @@
+<mxfile host="65bd71144e">
+    <diagram id="eju" name="Domain Modal">
+        <mxGraphModel dx="1097" dy="583" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" background="#fafafa" math="0" shadow="0">
+            <root>
+                <mxCell id="page_root_eju"/>
+                <mxCell id="node_root_eju" parent="page_root_eju"/>
+                <mxCell id="eju-10" value="GEM Architecture Flow" style="whiteSpace=wrap;html=1;rounded=0;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;fontSize=20;verticalAlign=top" parent="node_root_eju" vertex="1">
+                    <mxGeometry x="8" y="10" width="1113" height="581" as="geometry"/>
+                </mxCell>
+                <mxCell id="a1" value="KManager -&gt; KBuilder" style="whiteSpace=wrap;html=1;rounded=0;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" parent="node_root_eju" vertex="1">
+                    <mxGeometry x="47" y="334" width="160" height="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="a2" value="Handlebars-Helpers (ruby)" style="whiteSpace=wrap;html=1;rounded=0;fillColor=#ffe6cc;strokeColor=#d79b00;fontColor=#333333" parent="node_root_eju" vertex="1">
+                    <mxGeometry x="231" y="188" width="160" height="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="a3" value="Handlebars (ruby)" style="whiteSpace=wrap;html=1;rounded=0;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#333333" parent="node_root_eju" vertex="1">
+                    <mxGeometry x="468" y="304" width="160" height="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="a4" value="The Ruby Racer" style="whiteSpace=wrap;html=1;rounded=0;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#333333" parent="node_root_eju" vertex="1">
+                    <mxGeometry x="686" y="304" width="160" height="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="a5" value="HandlebarsJS (ruby)" style="whiteSpace=wrap;html=1;rounded=0;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#333333" parent="node_root_eju" vertex="1">
+                    <mxGeometry x="468" y="68" width="160" height="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="a6" value="Mini Racer" style="whiteSpace=wrap;html=1;rounded=0;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#333333" parent="node_root_eju" vertex="1">
+                    <mxGeometry x="686" y="68" width="160" height="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="a7" value="Node V8 engine" style="whiteSpace=wrap;html=1;rounded=0;fillColor=#1ba1e2;strokeColor=#006EAF;fontColor=#ffffff" parent="node_root_eju" vertex="1">
+                    <mxGeometry x="936" y="177" width="160" height="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="a8" value="&lt;span&gt;Handlebars.js (javascript)&lt;/span&gt;" style="whiteSpace=wrap;html=1;rounded=0;fillColor=#ffe6cc;strokeColor=#d79b00;fontColor=#333333" parent="node_root_eju" vertex="1">
+                    <mxGeometry x="936" y="393" width="160" height="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="eju-12" value="" style="edgeStyle=orthogonalEdgeStyle;curved=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;startArrow=none;startFill=1;endArrow=open;endFill=1;whiteSpace=wrap;html=1;rounded=0;fillColor=#ffe6cc;strokeColor=#d79b00" parent="node_root_eju" source="a2" target="a3" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="eju-13" value="" style="edgeStyle=orthogonalEdgeStyle;curved=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;startArrow=none;startFill=1;endArrow=open;endFill=1;whiteSpace=wrap;html=1;rounded=0;fillColor=#ffe6cc;strokeColor=#d79b00" parent="node_root_eju" source="a3" target="a4" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="eju-14" value="" style="edgeStyle=orthogonalEdgeStyle;curved=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;startArrow=none;startFill=1;endArrow=open;endFill=1;whiteSpace=wrap;html=1;rounded=0;fillColor=#ffe6cc;strokeColor=#d79b00" parent="node_root_eju" source="a2" target="a5" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="eju-15" value="" style="edgeStyle=orthogonalEdgeStyle;curved=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;startArrow=none;startFill=1;endArrow=open;endFill=1;whiteSpace=wrap;html=1;rounded=0;fillColor=#ffe6cc;strokeColor=#d79b00" parent="node_root_eju" source="a5" target="a6" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="eju-16" value="" style="edgeStyle=orthogonalEdgeStyle;curved=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;startArrow=none;startFill=1;endArrow=open;endFill=1;whiteSpace=wrap;html=1;rounded=0;fillColor=#ffe6cc;strokeColor=#d79b00" parent="node_root_eju" source="a4" target="a7" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="eju-17" value="" style="edgeStyle=orthogonalEdgeStyle;curved=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;startArrow=none;startFill=1;endArrow=open;endFill=1;whiteSpace=wrap;html=1;rounded=0;fillColor=#ffe6cc;strokeColor=#d79b00" parent="node_root_eju" source="a6" target="a7" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="eju-18" value="" style="edgeStyle=orthogonalEdgeStyle;curved=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;startArrow=none;startFill=1;endArrow=open;endFill=1;whiteSpace=wrap;html=1;rounded=0;fillColor=#ffe6cc;strokeColor=#d79b00" parent="node_root_eju" source="a7" target="a8" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="eju-19" value="" style="edgeStyle=orthogonalEdgeStyle;curved=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;startArrow=none;startFill=1;endArrow=open;endFill=1;whiteSpace=wrap;html=1;rounded=0;fillColor=#ffe6cc;strokeColor=#d79b00" parent="node_root_eju" source="a1" target="a2" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

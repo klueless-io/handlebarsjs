@@ -25,6 +25,7 @@ files_changed -= ['Gemfile']
 files_changed -= ['Gemfile.lock']
 files_changed -= ['.gitignore']
 files_changed -= ['README.md']
+files_changed -= ['lib/handlebarsjs/javascript/handlebars-4.7.7.js']
 
 files_changed = files_changed.reject { |f| f.downcase.end_with?('.json') }
 files_changed = files_changed.reject { |f| f.downcase.end_with?('.yml') }
