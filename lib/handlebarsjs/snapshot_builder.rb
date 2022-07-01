@@ -35,7 +35,7 @@ module Handlebarsjs
       raise Handlebarsjs::Error, 'script or path is required' if script.nil? && path.nil?
       raise Handlebarsjs::Error, 'script and path are mutually exclusive' if script && path
 
-      script = script || File.read(path)
+      script ||= File.read(path)
       add_script_item(name, type, script, path)
     end
 

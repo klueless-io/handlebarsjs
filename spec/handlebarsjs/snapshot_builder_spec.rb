@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe Handlebarsjs::SnapshotBuilder do
   let(:instance) { described_class.new }
 
@@ -6,23 +8,23 @@ RSpec.describe Handlebarsjs::SnapshotBuilder do
 
     context '.scripts' do
       subject { instance.scripts }
-    
+
       it { is_expected.to be_empty }
     end
 
     context '.script' do
       subject { instance.script }
-    
+
       it { is_expected.to be_empty }
     end
   end
 
   context '#register_helper' do
     before { instance.register_helper('ymen') }
-  
+
     describe '#scripts' do
       subject { instance.scripts }
-    
+
       it { is_expected.to have_attributes(count: 1) }
       it { expect(subject.first).to include(name: 'ymen', type: 'helper', script: "Handlebars.registerHelper('ymen', ruby_ymen)") }
     end
@@ -30,21 +32,21 @@ RSpec.describe Handlebarsjs::SnapshotBuilder do
 
   context 'add handlebars library' do
     before { instance.add_handlebars_js }
-  
+
     describe '#scripts' do
       subject { instance.scripts }
-    
+
       it { is_expected.to have_attributes(count: 1) }
       it { expect(subject.first).to include(name: 'handlebars', type: 'library', script: include('Copyright (C) 2011-2019 by Yehuda Katz')) }
 
       context 'when script and helper is present' do
         subject { instance.script }
-        
-        before { 
+
+        before do
           instance.add_library('xmen', script: 'function xmen() { return "xmen" }')
           instance.register_helper('ymen')
-        }
-      
+        end
+
         it do
           expect(subject)
             .to include('Copyright (C) 2011-2019 by Yehuda Katz')
@@ -75,14 +77,14 @@ RSpec.describe Handlebarsjs::SnapshotBuilder do
 
       context '.scripts' do
         subject { instance.scripts }
-      
+
         it { is_expected.to have_attributes(count: 1) }
-        it { expect(subject.first).to include(name: 'sample 1', type: 'library', script: "function sample1() {\n  return \'sample1\';\n}", path: "spec/mocks/sample-library-1.js") }
+        it { expect(subject.first).to include(name: 'sample 1', type: 'library', script: "function sample1() {\n  return \'sample1\';\n}", path: 'spec/mocks/sample-library-1.js') }
 
         describe '#script' do
           subject { instance.script }
-        
-          it { is_expected.to include("function sample1()").and include("# library - sample 1") }
+
+          it { is_expected.to include('function sample1()').and include('# library - sample 1') }
         end
 
         context 'when two library files' do
@@ -91,13 +93,13 @@ RSpec.describe Handlebarsjs::SnapshotBuilder do
           end
 
           it { is_expected.to have_attributes(count: 2) }
-          it { expect(subject.first).to include(name: 'sample 1', type: 'library', script: "function sample1() {\n  return \'sample1\';\n}", path: "spec/mocks/sample-library-1.js") }
-          it { expect(subject.last).to include(name: 'sample 2', type: 'library', script: "function sample2() {\n  return \'sample2\';\n}", path: "spec/mocks/sample-library-2.js") }
+          it { expect(subject.first).to include(name: 'sample 1', type: 'library', script: "function sample1() {\n  return \'sample1\';\n}", path: 'spec/mocks/sample-library-1.js') }
+          it { expect(subject.last).to include(name: 'sample 2', type: 'library', script: "function sample2() {\n  return \'sample2\';\n}", path: 'spec/mocks/sample-library-2.js') }
 
           describe '#script' do
             subject { instance.script }
-          
-            it { is_expected.to include("function sample1()").and include("# library - sample 1").and include("function sample2()").and include("# library - sample 2") }
+
+            it { is_expected.to include('function sample1()').and include('# library - sample 1').and include('function sample2()').and include('# library - sample 2') }
           end
         end
       end

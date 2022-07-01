@@ -10,7 +10,8 @@ module Handlebarsjs
     # Comparison helpers, eg. or, and, equal, not equal, less than, greater than etc.
     module Comparison
       # And: Block helper that renders a block if **all of** the given values are truthy. If an inverse block is specified it will be rendered when falsy.
-      class And # < Handlebars::Helpers::BaseHelper
+      # < Handlebars::Helpers::BaseHelper
+      class And
         # Parse will And: Block helper that renders a block if **all of** the given values are truthy. If an inverse block is specified it will be rendered when falsy.
         #
         # @example

@@ -2,6 +2,6 @@
 
 # module Handlebarsjs
 #   class Handlebars
-    
+
 #   end
 # end

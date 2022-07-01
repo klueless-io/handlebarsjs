@@ -11,7 +11,5 @@ module Handlebarsjs
     attr_reader :snapshot
 
     # def initialize
-      
-
   end
 end
