@@ -3,10 +3,12 @@
 require 'mini_racer'
 require_relative 'handlebarsjs/version'
 require_relative 'handlebarsjs/snapshot_builder'
+require_relative 'handlebarsjs/javascript'
 require_relative 'handlebarsjs/handlebars'
 
 module Handlebarsjs
-  JAVASCRIPT_PATH = 'lib/handlebarsjs/javascript/handlebars-4.7.7.js'
+  HANDLEBARS_LIBRARY_PATH = 'lib/handlebarsjs/javascript/handlebars-4.7.7.js'
+  HANDLEBARS_API_PATH = 'lib/handlebarsjs/javascript/handlebars-api.js'
 
   # raise Handlebarsjs::Error, 'Sample message'
   Error = Class.new(StandardError)

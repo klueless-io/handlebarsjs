@@ -10,46 +10,6 @@ RSpec.describe Handlebarsjs do
       .to raise_error('some message')
   end
 
-  context 'mini_racer' do
-    let(:context) { MiniRacer::Context.new }
-    it 'can run native javascript' do
-      colors = context.eval <<-JS
-      'red yellow blue'.split(' ')
-      JS
-
-      expect(colors).to eq(%w[red yellow blue])
-    end
-
-    it 'can run native javascript with arguments' do
-      context.eval 'var adder = (a,b)=>a+b;'
-      total = context.eval 'adder(20,22)'
-
-      expect(total).to eq(42)
-    end
-
-    it 'can run native ruby inside javascript with arguments' do
-      context.attach('ruby.adder', proc do |a, b|
-        a + b
-      end)
-
-      total = context.eval 'ruby.adder(30,22)'
-
-      expect(total).to eq(52)
-    end
-
-    it 'can pass ruby objects to javascript' do
-      name = {
-        first: 'Sean',
-        last: 'Wallace'
-      }
-
-      context.eval('function hello(name) { return "Hello, " + name.first + " " + name.last + "!" }')
-      message = context.call('hello', name)
-
-      expect(message).to eq('Hello, Sean Wallace!')
-    end
-  end
-
   context 'miniracer with handlebarsjs snapshot' do
     let(:handlebarsjs_path) { 'lib/handlebarsjs/javascript/handlebars-4.7.7.js' }
     let(:handlebarsjs_helpers_path) { 'lib/handlebarsjs/javascript/handlebars-helpers.js' }

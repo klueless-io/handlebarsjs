@@ -19,7 +19,27 @@ RSpec.describe Handlebarsjs::SnapshotBuilder do
     end
   end
 
-  context '#register_helper' do
+  describe '#build' do
+    subject { instance.build }
+
+    it { is_expected.to be_a(MiniRacer::Snapshot) }
+
+    it 'same Snapshot is returned when called multiple times' do
+      id = instance.build.object_id
+
+      expect(instance.build.object_id).to eq(id)
+    end
+
+    it 'new Snapshot is returned if script changes' do
+      id = instance.build.object_id
+
+      instance.add_library('handlebars', path: Handlebarsjs::HANDLEBARS_LIBRARY_PATH)
+
+      expect(instance.build.object_id).not_to eq(id)
+    end
+  end
+
+  describe '#register_helper' do
     before { instance.register_helper('ymen') }
 
     describe '#scripts' do
@@ -31,7 +51,7 @@ RSpec.describe Handlebarsjs::SnapshotBuilder do
   end
 
   context 'add handlebars library' do
-    before { instance.add_handlebars_js }
+    before { instance.add_library('handlebars', path: Handlebarsjs::HANDLEBARS_LIBRARY_PATH) }
 
     describe '#scripts' do
       subject { instance.scripts }
@@ -84,7 +104,7 @@ RSpec.describe Handlebarsjs::SnapshotBuilder do
         describe '#script' do
           subject { instance.script }
 
-          it { is_expected.to include('function sample1()').and include('# library - sample 1') }
+          it { is_expected.to include('function sample1()').and include('// library - sample 1') }
         end
 
         context 'when two library files' do
@@ -99,7 +119,7 @@ RSpec.describe Handlebarsjs::SnapshotBuilder do
           describe '#script' do
             subject { instance.script }
 
-            it { is_expected.to include('function sample1()').and include('# library - sample 1').and include('function sample2()').and include('# library - sample 2') }
+            it { is_expected.to include('function sample1()').and include('// library - sample 1').and include('function sample2()').and include('// library - sample 2') }
           end
         end
       end

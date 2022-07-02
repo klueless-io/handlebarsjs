@@ -9,10 +9,6 @@ module Handlebarsjs
       @scripts = []
     end
 
-    def add_handlebars_js
-      add_script('handlebars', 'library', path: Handlebarsjs::JAVASCRIPT_PATH)
-    end
-
     def add_library(name, script: nil, path: nil)
       add_script(name, 'library', script: script, path: path)
     end
@@ -22,11 +18,11 @@ module Handlebarsjs
     end
 
     def script
-      scripts.map { |script| "# #{script[:type]} - #{script[:name]}\n#{script[:script]}" }.join("\n\n")
+      scripts.map { |script| "// #{script[:type]} - #{script[:name]}\n#{script[:script]}" }.join("\n\n")
     end
 
     def build
-      MiniRacer::Snapshot.new(script)
+      @build ||= MiniRacer::Snapshot.new(script)
     end
 
     private
@@ -40,6 +36,7 @@ module Handlebarsjs
     end
 
     def add_script_item(name, type, script, path = nil)
+      @build = nil
       scripts << {
         name: name,
         type: type,
