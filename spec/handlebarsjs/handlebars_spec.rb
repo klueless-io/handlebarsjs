@@ -20,10 +20,10 @@ RSpec.describe Handlebarsjs::Handlebars do
           Hello {{name}}
         TEXT
       end
-  
+
       let(:data) { { name: 'World' } }
 
-      it { is_expected.to eq("Hello World") }
+      it { is_expected.to eq('Hello World') }
     end
 
     context 'handle whitespace suppression' do
@@ -34,8 +34,8 @@ RSpec.describe Handlebarsjs::Handlebars do
       end
 
       let(:data) { { word: 'HELLO' } }
-      
-      it { is_expected.to eq("--------HELLO--------") }
+
+      it { is_expected.to eq('--------HELLO--------') }
     end
 
     xcontext 'allow Ruby blocks in data' do
@@ -46,9 +46,9 @@ RSpec.describe Handlebarsjs::Handlebars do
         TEXT
       end
 
-      let(:data) { { name: ->(_context) { "Mate" } } }
+      let(:data) { { name: ->(_context) { 'Mate' } } }
 
-      it { is_expected.to eq("Hi Mate") }
+      it { is_expected.to eq('Hi Mate') }
     end
   end
 end
