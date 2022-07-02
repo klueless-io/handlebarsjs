@@ -1,3 +1,11 @@
+# [0.2.0](https://github.com/klueless-io/handlebarsjs/compare/v0.1.2...v0.2.0) (2022-07-02)
+
+
+### Features
+
+* add support for basic template processing ([13d9649](https://github.com/klueless-io/handlebarsjs/commit/13d9649c03fa7de0326bed71d08441453194e4e1))
+* add support for basic template processing ([64966e5](https://github.com/klueless-io/handlebarsjs/commit/64966e5ad396910dd0e7edc11a4d8427a10cae29))
+
 ## [0.1.2](https://github.com/klueless-io/handlebarsjs/compare/v0.1.1...v0.1.2) (2022-07-01)
 
 
