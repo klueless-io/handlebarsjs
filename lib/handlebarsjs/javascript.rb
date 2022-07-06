@@ -3,10 +3,10 @@
 module Handlebarsjs
   # API for interacting with Javascript while providing native Ruby helpers
   class Javascript
-    attr_reader :snapshot_builder
+    attr_reader :handlebars_snapshot
 
     def initialize
-      @snapshot_builder = SnapshotBuilder.new
+      @handlebars_snapshot = HandlebarsSnapshot.new
     end
 
     def eval(script)
@@ -24,7 +24,8 @@ module Handlebarsjs
     private
 
     def context
-      @context ||= MiniRacer::Context.new(snapshot: snapshot_builder.build)
+      puts 'Snapshot and context are out of date, calls to snapshot should happen before any calls to context' if !@context.nil? && handlebars_snapshot.dirty?
+      @context ||= MiniRacer::Context.new(snapshot: handlebars_snapshot.snapshot)
     end
   end
 end

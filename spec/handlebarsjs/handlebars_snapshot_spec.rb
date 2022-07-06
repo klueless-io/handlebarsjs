@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-RSpec.describe Handlebarsjs::SnapshotBuilder do
+RSpec.describe Handlebarsjs::HandlebarsSnapshot do
   let(:instance) { described_class.new }
 
   context 'initialize' do
@@ -19,23 +19,23 @@ RSpec.describe Handlebarsjs::SnapshotBuilder do
     end
   end
 
-  describe '#build' do
-    subject { instance.build }
+  describe '#snapshot' do
+    subject { instance.snapshot }
 
     it { is_expected.to be_a(MiniRacer::Snapshot) }
 
     it 'same Snapshot is returned when called multiple times' do
-      id = instance.build.object_id
+      id = instance.snapshot.object_id
 
-      expect(instance.build.object_id).to eq(id)
+      expect(instance.snapshot.object_id).to eq(id)
     end
 
     it 'new Snapshot is returned if script changes' do
-      id = instance.build.object_id
+      id = instance.snapshot.object_id
 
       instance.add_library('handlebars', path: Handlebarsjs::HANDLEBARS_LIBRARY_PATH)
 
-      expect(instance.build.object_id).not_to eq(id)
+      expect(instance.snapshot.object_id).not_to eq(id)
     end
   end
 

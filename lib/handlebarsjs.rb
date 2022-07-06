@@ -2,8 +2,8 @@
 
 require 'mini_racer'
 require_relative 'handlebarsjs/version'
-require_relative 'handlebarsjs/snapshot_builder'
 require_relative 'handlebarsjs/javascript'
+require_relative 'handlebarsjs/handlebars_snapshot'
 require_relative 'handlebarsjs/handlebars'
 
 module Handlebarsjs

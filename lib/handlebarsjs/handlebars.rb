@@ -6,13 +6,14 @@ module Handlebarsjs
     def initialize
       super
       # Handlebars 4.7.7
-      snapshot_builder.add_library('handlebars', path: Handlebarsjs::HANDLEBARS_LIBRARY_PATH)
+      handlebars_snapshot.add_library('handlebars', path: Handlebarsjs::HANDLEBARS_LIBRARY_PATH)
 
       # Support functions for working with
-      snapshot_builder.add_library('handlebars-api', path: Handlebarsjs::HANDLEBARS_API_PATH)
+      handlebars_snapshot.add_library('handlebars-api', path: Handlebarsjs::HANDLEBARS_API_PATH)
     end
 
     def process_template(template, options = {})
+      # TODO: process template function may be improved with some type of caching
       context.call('process_template', template, options)
     end
   end

@@ -1,16 +1,32 @@
 # frozen_string_literal: true
 
 module Handlebarsjs
-  # Wraps MiniRacer snapshot and provides clean API
-  class SnapshotBuilder
+  # Wraps MiniRacer snapshot with specific emphasis on
+  # loading Handlebars helpers onto the MiniRacer context
+  # in the correct order. So that new contexts are preloaded
+  # with the handlebars library and the configured helpers.
+  class HandlebarsSnapshot
     attr_reader :scripts
+    attr_reader :helpers
 
     def initialize
       @scripts = []
+      @helpers = []
     end
 
     def add_library(name, script: nil, path: nil)
       add_script(name, 'library', script: script, path: path)
+    end
+
+    def add_snippet(name, script: nil, path: nil)
+      add_script(name, 'snippet', script: script, path: path)
+    end
+
+    def add_helper(name, callback)
+      @helpers << {
+        name: name,
+        callback: callback
+      }
     end
 
     def register_helper(name)
@@ -21,8 +37,16 @@ module Handlebarsjs
       scripts.map { |script| "// #{script[:type]} - #{script[:name]}\n#{script[:script]}" }.join("\n\n")
     end
 
-    def build
-      @build ||= MiniRacer::Snapshot.new(script)
+    def snapshot
+      @snapshot ||= MiniRacer::Snapshot.new(script)
+    end
+
+    def dirty?
+      @snapshot.nil?
+    end
+
+    def debug
+      puts script
     end
 
     private
@@ -36,7 +60,7 @@ module Handlebarsjs
     end
 
     def add_script_item(name, type, script, path = nil)
-      @build = nil
+      @snapshot = nil
       scripts << {
         name: name,
         type: type,
