@@ -89,23 +89,18 @@ RSpec.describe Handlebarsjs::Handlebars do
       end
 
       context 'when Ruby helper is provided' do
+        let(:callback) { ->(person, _opts) { "#{person['first']} #{person['last']}" } }
+
         before do
-          # instance.handlebars_snapshot.register_helper('full_name')
-          # instance.handlebars_snapshot.debug
-          instance.attach('ruby_full_name', ->(person, _opts) { "#{person['first']} #{person['last']}" })
-          instance.eval("Handlebars.registerHelper('full_name', ruby_full_name)")
+          instance.handlebars_snapshot.add_helper('full_name', callback)
         end
 
         context '.process_template' do
           subject do
-            # instance.handlebars_snapshot.debug
-
             instance.process_template(template, data)
           end
 
-          # fit { puts instance.eval('ruby_full_name({ first: "David", last: "Cruwys"})') }
-
-          # fit { is_expected.to eq('Hi David Cruwys') }
+          it { is_expected.to eq('Hi David Cruwys') }
         end
       end
     end

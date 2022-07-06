@@ -25,7 +25,7 @@ module Handlebarsjs
 
     def context
       puts 'Snapshot and context are out of date, calls to snapshot should happen before any calls to context' if !@context.nil? && handlebars_snapshot.dirty?
-      @context ||= MiniRacer::Context.new(snapshot: handlebars_snapshot.snapshot)
+      @context ||= handlebars_snapshot.new_context
     end
   end
 end

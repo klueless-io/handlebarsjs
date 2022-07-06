@@ -39,6 +39,25 @@ RSpec.describe Handlebarsjs::HandlebarsSnapshot do
     end
   end
 
+  describe '#new_context' do
+    subject { instance.new_context }
+
+    it { is_expected.to be_a(MiniRacer::Context) }
+  end
+
+  describe '#add_helper' do
+    subject { instance.helpers }
+
+    it { is_expected.to be_empty }
+
+    it 'adds a helper' do
+      callback = ->(name) { "Hello, #{name}!" }
+      instance.add_helper('hello', callback)
+
+      expect(subject).to include({ name: 'hello', callback: callback })
+    end
+  end
+
   describe '#register_helper' do
     before { instance.register_helper('ymen') }
 

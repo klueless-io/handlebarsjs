@@ -41,6 +41,20 @@ module Handlebarsjs
       @snapshot ||= MiniRacer::Snapshot.new(script)
     end
 
+    # rubocop:disable Style/DocumentDynamicEvalDefinition
+    def new_context
+      context = MiniRacer::Context.new(snapshot: snapshot)
+
+      helpers.each do |helper|
+        context.attach("ruby_#{helper[:name]}", helper[:callback])
+        context.eval("Handlebars.registerHelper('#{helper[:name]}', ruby_#{helper[:name]})")
+      end
+
+      context
+    end
+    # rubocop:enable Style/DocumentDynamicEvalDefinition
+
+    # not currently used
     def dirty?
       @snapshot.nil?
     end
