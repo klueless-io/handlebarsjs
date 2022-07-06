@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require_relative '../mocks/full_name_helper'
+require_relative '../mocks/person_full_name_helper'
 
 RSpec.describe Handlebarsjs::Handlebars do
   let(:instance) { described_class.new }
@@ -104,9 +105,19 @@ RSpec.describe Handlebarsjs::Handlebars do
             it { is_expected.to eq('Hi David Cruwys') }
           end
         end
-        context 'as class' do
-          let(:helper) { FullNameHelper.new }
+        context 'as class with standard methods' do
+          let(:helper) { PersonFullNameHelper.new }
 
+          context '.process_template' do
+            subject { instance.process_template(template, data) }
+
+            it { is_expected.to eq('Hi David Cruwys') }
+          end
+        end
+        context 'as class with custom methods' do
+          let(:helper) { FullNameHelper.new }
+          let(:template) { "Hi {{full_name person.first person.last}}" }
+    
           context '.process_template' do
             subject { instance.process_template(template, data) }
 
