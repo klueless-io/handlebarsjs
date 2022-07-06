@@ -1,3 +1,10 @@
+# [0.3.0](https://github.com/klueless-io/handlebarsjs/compare/v0.2.0...v0.3.0) (2022-07-06)
+
+
+### Features
+
+* refactor snapshot builder to handlebars snapshot ([bc6d079](https://github.com/klueless-io/handlebarsjs/commit/bc6d079d12b87f0198ae2a32c94c6349929c8c70))
+
 # [0.2.0](https://github.com/klueless-io/handlebarsjs/compare/v0.1.2...v0.2.0) (2022-07-02)
 
 
