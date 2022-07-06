@@ -116,8 +116,8 @@ RSpec.describe Handlebarsjs::Handlebars do
         end
         context 'as class with custom methods' do
           let(:helper) { FullNameHelper.new }
-          let(:template) { "Hi {{full_name person.first person.last}}" }
-    
+          let(:template) { 'Hi {{full_name person.first person.last}}' }
+
           context '.process_template' do
             subject { instance.process_template(template, data) }
 
