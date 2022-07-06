@@ -5,6 +5,7 @@ require_relative 'handlebarsjs/version'
 require_relative 'handlebarsjs/javascript'
 require_relative 'handlebarsjs/handlebars_snapshot'
 require_relative 'handlebarsjs/handlebars'
+require_relative 'handlebarsjs/base_helper'
 
 module Handlebarsjs
   HANDLEBARS_LIBRARY_PATH = 'lib/handlebarsjs/javascript/handlebars-4.7.7.js'

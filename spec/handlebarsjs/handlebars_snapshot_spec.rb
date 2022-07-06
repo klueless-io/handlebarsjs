@@ -50,11 +50,13 @@ RSpec.describe Handlebarsjs::HandlebarsSnapshot do
 
     it { is_expected.to be_empty }
 
-    it 'adds a helper' do
-      callback = ->(name) { "Hello, #{name}!" }
-      instance.add_helper('hello', callback)
+    context 'when helper is a lambda expression' do
+      it 'adds a helper' do
+        callback = ->(name) { "Hello, #{name}!" }
+        instance.add_helper('hello', callback)
 
-      expect(subject).to include({ name: 'hello', callback: callback })
+        expect(subject).to include({ name: 'hello', callback: callback })
+      end
     end
   end
 

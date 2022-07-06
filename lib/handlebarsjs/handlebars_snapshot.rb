@@ -22,11 +22,14 @@ module Handlebarsjs
       add_script(name, 'snippet', script: script, path: path)
     end
 
-    def add_helper(name, callback)
-      @helpers << {
-        name: name,
-        callback: callback
-      }
+    def add_helper(name, helper)
+      callback = nil
+      callback = helper if helper.is_a?(Proc)
+      callback = helper.to_proc if callback.nil? && helper.respond_to?(:to_proc)
+
+      raise Handlebarsjs::Error, 'helper must be a callback or implement to_proc method' if callback.nil?
+
+      add_helper_callback(name, callback)
     end
 
     def register_helper(name)
@@ -71,6 +74,13 @@ module Handlebarsjs
 
       script ||= File.read(path)
       add_script_item(name, type, script, path)
+    end
+
+    def add_helper_callback(name, callback)
+      @helpers << {
+        name: name,
+        callback: callback
+      }
     end
 
     def add_script_item(name, type, script, path = nil)

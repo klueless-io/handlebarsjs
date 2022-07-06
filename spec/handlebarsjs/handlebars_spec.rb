@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require_relative '../mocks/full_name_helper'
+
 RSpec.describe Handlebarsjs::Handlebars do
   let(:instance) { described_class.new }
 
@@ -88,19 +90,28 @@ RSpec.describe Handlebarsjs::Handlebars do
         end
       end
 
-      context 'when Ruby helper is provided' do
-        let(:callback) { ->(person, _opts) { "#{person['first']} #{person['last']}" } }
+      context 'when Ruby helper provided' do
+        before { instance.handlebars_snapshot.add_helper(helper_name, helper) }
 
-        before do
-          instance.handlebars_snapshot.add_helper('full_name', callback)
-        end
+        let(:helper_name) { 'full_name' }
 
-        context '.process_template' do
-          subject do
-            instance.process_template(template, data)
+        context 'as callback' do
+          let(:helper) { ->(person, _opts) { "#{person['first']} #{person['last']}" } }
+
+          context '.process_template' do
+            subject { instance.process_template(template, data) }
+
+            it { is_expected.to eq('Hi David Cruwys') }
           end
+        end
+        context 'as class' do
+          let(:helper) { FullNameHelper.new }
 
-          it { is_expected.to eq('Hi David Cruwys') }
+          context '.process_template' do
+            subject { instance.process_template(template, data) }
+
+            it { is_expected.to eq('Hi David Cruwys') }
+          end
         end
       end
     end
