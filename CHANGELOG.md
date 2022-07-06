@@ -1,3 +1,10 @@
+# [0.5.0](https://github.com/klueless-io/handlebarsjs/compare/v0.4.0...v0.5.0) (2022-07-06)
+
+
+### Features
+
+* add base_helper ([d2900ae](https://github.com/klueless-io/handlebarsjs/commit/d2900ae6c2ce27a7a8ac4c92d219f0e9150354f5))
+
 # [0.4.0](https://github.com/klueless-io/handlebarsjs/compare/v0.3.0...v0.4.0) (2022-07-06)
 
 
