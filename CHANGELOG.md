@@ -1,3 +1,11 @@
+## [0.5.1](https://github.com/klueless-io/handlebarsjs/compare/v0.5.0...v0.5.1) (2022-07-06)
+
+
+### Bug Fixes
+
+* add tests for base_helper ([2734326](https://github.com/klueless-io/handlebarsjs/commit/27343261d0189440a3f10f98a0a29b12f05c56e7))
+* add tests for base_helper ([0c8355e](https://github.com/klueless-io/handlebarsjs/commit/0c8355e056b6d447aaffa87718240a8542958e5d))
+
 # [0.5.0](https://github.com/klueless-io/handlebarsjs/compare/v0.4.0...v0.5.0) (2022-07-06)
 
 
