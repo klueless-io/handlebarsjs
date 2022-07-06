@@ -1,3 +1,10 @@
+# [0.4.0](https://github.com/klueless-io/handlebarsjs/compare/v0.3.0...v0.4.0) (2022-07-06)
+
+
+### Features
+
+* add handlebars add_helper support ([19a5636](https://github.com/klueless-io/handlebarsjs/commit/19a5636698515c6c3128040d708d54527ba62dec))
+
 # [0.3.0](https://github.com/klueless-io/handlebarsjs/compare/v0.2.0...v0.3.0) (2022-07-06)
 
 
