@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require_relative '../mocks/sample_helpers'
+
 RSpec.describe Handlebarsjs::HandlebarsSnapshot do
   let(:instance) { described_class.new }
 
@@ -53,9 +55,20 @@ RSpec.describe Handlebarsjs::HandlebarsSnapshot do
     context 'when helper is a lambda expression' do
       it 'adds a helper' do
         callback = ->(name) { "Hello, #{name}!" }
-        instance.add_helper('hello', callback)
+        entry = instance.add_helper('hello', callback)
 
-        expect(subject).to include({ name: 'hello', callback: callback })
+        expect(entry).to include({ name: 'hello', callback: callback, helper: nil })
+        expect(subject).to include({ name: 'hello', callback: callback, helper: nil })
+      end
+    end
+
+    context 'when helper implements a cmdlet' do
+      it 'adds a helper' do
+        helper = SampleHandlebarsHelper1.new
+        entry = instance.add_helper('sample', helper)
+
+        expect(entry).to include({ name: 'sample', callback: be_a(Proc), helper: helper })
+        expect(subject).to include({ name: 'sample', callback: be_a(Proc), helper: helper })
       end
     end
   end
