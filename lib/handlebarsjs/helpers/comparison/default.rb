@@ -4,9 +4,9 @@ module Handlebarsjs
   module Helpers
     # Comparison helpers, eg. or, and, equal, not equal, less than, greater than etc.
     module Comparison
-      # And: Return true if **all of** the given values are truthy.
-      class And < Handlebarsjs::BaseHelper
-        register_cmdlet(Cmdlet::Comparison::And)
+      # Default: Return true if **all of** the given values are truthy.
+      class Default < Handlebarsjs::BaseHelper
+        register_cmdlet(Cmdlet::Comparison::Default)
 
         def to_proc
           ->(*values, _opts) { wrapper(cmdlet.call(*values)) }
