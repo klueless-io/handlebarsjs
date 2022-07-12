@@ -3,6 +3,7 @@
 require 'mini_racer'
 require 'cmdlet'
 require_relative 'handlebarsjs/version'
+require_relative 'handlebarsjs/configuration'
 require_relative 'handlebarsjs/javascript'
 require_relative 'handlebarsjs/handlebars_snapshot'
 require_relative 'handlebarsjs/handlebars'

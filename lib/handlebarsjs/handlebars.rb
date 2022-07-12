@@ -6,10 +6,15 @@ module Handlebarsjs
     def initialize
       super
       # Handlebars 4.7.7
-      handlebars_snapshot.add_library('handlebars', path: Handlebarsjs::HANDLEBARS_LIBRARY_PATH)
+      gem_path = Gem.loaded_specs['handlebarsjs'].full_gem_path
+
+      handlebars_lib_path = File.join(gem_path, Handlebarsjs::HANDLEBARS_LIBRARY_PATH)
+      handlebars_api_path = File.join(gem_path, Handlebarsjs::HANDLEBARS_API_PATH)
+
+      handlebars_snapshot.add_library('handlebars', path: handlebars_lib_path)
 
       # Support functions for working with
-      handlebars_snapshot.add_library('handlebars-api', path: Handlebarsjs::HANDLEBARS_API_PATH)
+      handlebars_snapshot.add_library('handlebars-api', path: handlebars_api_path)
     end
 
     def process_template(template, options = {})
