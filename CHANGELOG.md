@@ -1,3 +1,10 @@
+## [0.5.5](https://github.com/klueless-io/handlebarsjs/compare/v0.5.4...v0.5.5) (2022-07-12)
+
+
+### Bug Fixes
+
+* add configuration ([ab16612](https://github.com/klueless-io/handlebarsjs/commit/ab16612500b1cf61094b128e14fcecbe1aacde5b))
+
 ## [0.5.4](https://github.com/klueless-io/handlebarsjs/compare/v0.5.3...v0.5.4) (2022-07-12)
 
 
