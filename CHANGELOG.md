@@ -1,3 +1,10 @@
+## [0.5.2](https://github.com/klueless-io/handlebarsjs/compare/v0.5.1...v0.5.2) (2022-07-12)
+
+
+### Bug Fixes
+
+* add helper - case: * ([08dcad2](https://github.com/klueless-io/handlebarsjs/commit/08dcad20601bf578a17ae703d273a7081486df8e))
+
 ## [0.5.1](https://github.com/klueless-io/handlebarsjs/compare/v0.5.0...v0.5.1) (2022-07-06)
 
 
