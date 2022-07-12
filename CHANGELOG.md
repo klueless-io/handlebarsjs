@@ -1,3 +1,11 @@
+## [0.5.3](https://github.com/klueless-io/handlebarsjs/compare/v0.5.2...v0.5.3) (2022-07-12)
+
+
+### Bug Fixes
+
+* add inflection: pluralize_number and pluralize_number_word ([2f5d6e1](https://github.com/klueless-io/handlebarsjs/commit/2f5d6e11b8cc6cd052496ec3f648423fbacececf))
+* add inflection: pluralize_number and pluralize_number_word ([6590859](https://github.com/klueless-io/handlebarsjs/commit/6590859ddfb3d3402677939d887e70e611d18a97))
+
 ## [0.5.2](https://github.com/klueless-io/handlebarsjs/compare/v0.5.1...v0.5.2) (2022-07-12)
 
 
