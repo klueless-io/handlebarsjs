@@ -30,6 +30,5 @@ RSpec.describe Handlebarsjs::Helpers::Inflection::PluralizeNumber do
         end
       end
     end
-
   end
 end
