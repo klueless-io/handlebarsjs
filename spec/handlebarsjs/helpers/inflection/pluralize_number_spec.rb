@@ -18,7 +18,7 @@ RSpec.describe Handlebarsjs::Helpers::Inflection::PluralizeNumber do
 
     let(:template) { '{{pluralize_number value count}}' }
 
-    context 'when default format' do
+    context 'when value is supplied' do
       let(:value) { 'person' }
       context 'when one person' do
         let(:count) { 1 }

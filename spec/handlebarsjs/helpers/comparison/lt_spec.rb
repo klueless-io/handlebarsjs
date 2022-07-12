@@ -18,7 +18,7 @@ RSpec.describe Handlebarsjs::Helpers::Comparison::Lt do
     let(:template) do
       <<~TEXT.chomp
         {{#if (lt lhs rhs)}}
-        true
+          true
         {{^}}
           false
         {{/if}}
