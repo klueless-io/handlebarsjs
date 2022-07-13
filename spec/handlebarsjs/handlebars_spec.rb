@@ -156,5 +156,41 @@ RSpec.describe Handlebarsjs::Handlebars do
     let(:data) { { first: 'David', last: 'Cruwys' } }
 
     it { is_expected.to eq('Hi David Cruwys') }
+
+    context 'for array helpers' do
+      it 'after require' do
+        KConfig.reset
+        expect(KConfig.configuration.handlebars.helpers.length).to eq(0)
+        require_relative '../../lib/handlebarsjs/helpers/array/default_configuration'
+        expect(KConfig.configuration.handlebars.helpers.length).to be > 0
+      end
+    end
+
+    context 'for case helpers' do
+      it 'after require' do
+        KConfig.reset
+        expect(KConfig.configuration.handlebars.helpers.length).to eq(0)
+        require_relative '../../lib/handlebarsjs/helpers/case/default_configuration'
+        expect(KConfig.configuration.handlebars.helpers.length).to be > 0
+      end
+    end
+
+    context 'for comparison helpers' do
+      it 'after require' do
+        KConfig.reset
+        expect(KConfig.configuration.handlebars.helpers.length).to eq(0)
+        require_relative '../../lib/handlebarsjs/helpers/comparison/default_configuration'
+        expect(KConfig.configuration.handlebars.helpers.length).to be > 0
+      end
+    end
+
+    context 'for inflection helpers' do
+      it 'after require' do
+        KConfig.reset
+        expect(KConfig.configuration.handlebars.helpers.length).to eq(0)
+        require_relative '../../lib/handlebarsjs/helpers/inflection/default_configuration'
+        expect(KConfig.configuration.handlebars.helpers.length).to be > 0
+      end
+    end
   end
 end

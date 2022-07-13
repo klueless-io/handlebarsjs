@@ -10,6 +10,7 @@ require_relative 'handlebarsjs/handlebars'
 require_relative 'handlebarsjs/base_helper'
 require_relative '_'
 
+# Handlebarsjs is a Ruby wrapper for the Handlebars.js templating engine.
 module Handlebarsjs
   HANDLEBARS_LIBRARY_PATH = 'lib/handlebarsjs/javascript/handlebars-4.7.7.js'
   HANDLEBARS_API_PATH = 'lib/handlebarsjs/javascript/handlebars-api.js'
@@ -17,7 +18,27 @@ module Handlebarsjs
   # raise Handlebarsjs::Error, 'Sample message'
   Error = Class.new(StandardError)
 
-  # Your code goes here...
+  class << self
+    # Get a singleton instance of the Handlebars engine.
+    #
+    # The engine is exposed as a singleton and that means that if you
+    # alter the configuration after calling Handlebarsjs.engine,
+    # you will have old helper state attached to the engine.
+    #
+    # If you need to update your helper state, then run Handlebarsjs.reset
+    # to clear the singleton
+    def engine
+      @engine ||= Handlebarsjs::Handlebars.new
+    end
+
+    def reset
+      @engine = nil
+    end
+
+    def process_template(template, options = {})
+      @engine.process_template(template, options)
+    end
+  end
 end
 
 if ENV.fetch('KLUE_DEBUG', 'false').downcase == 'true'
