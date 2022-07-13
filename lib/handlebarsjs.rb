@@ -3,11 +3,13 @@
 require 'mini_racer'
 require 'cmdlet'
 require_relative 'handlebarsjs/version'
-require_relative 'handlebarsjs/configuration'
 require_relative 'handlebarsjs/javascript'
 require_relative 'handlebarsjs/handlebars_snapshot'
 require_relative 'handlebarsjs/handlebars'
 require_relative 'handlebarsjs/base_helper'
+require_relative 'handlebarsjs/handlebars_configuration_defaults'
+require_relative 'handlebarsjs/handlebars_configuration'
+require_relative 'handlebarsjs/handlebars_configuration_extension'
 require_relative '_'
 
 # Handlebarsjs is a Ruby wrapper for the Handlebars.js templating engine.
@@ -36,7 +38,7 @@ module Handlebarsjs
     end
 
     def render(template, options = {})
-      @engine.process_template(template, options)
+      engine.process_template(template, options)
     end
   end
 end

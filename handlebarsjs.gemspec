@@ -40,7 +40,7 @@ Gem::Specification.new do |spec|
   # spec.extensions    = ['ext/handlebarsjs/extconf.rb']
 
   spec.add_dependency 'cmdlet', '~> 0'
-  spec.add_dependency 'k_log', '~> 0.0.0'
-  spec.add_dependency 'mini_racer'
+  spec.add_dependency 'k_log', '~> 0'
+  spec.add_dependency 'mini_racer', '~> 0.6'
   # spec.add_dependency 'k_util', '~> 0.0.0'
 end

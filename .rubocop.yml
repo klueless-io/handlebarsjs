@@ -87,3 +87,6 @@ Layout/SpaceBeforeComma:
   Enabled: false
 # My Preferences - End
 
+Metrics/AbcSize:
+  Exclude:
+    - "lib/handlebarsjs/handlebars_configuration_defaults.rb"

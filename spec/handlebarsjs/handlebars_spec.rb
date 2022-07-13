@@ -158,37 +158,37 @@ RSpec.describe Handlebarsjs::Handlebars do
     it { is_expected.to eq('Hi David Cruwys') }
 
     context 'for array helpers' do
-      it 'after require' do
+      it 'apply defaults' do
         KConfig.reset
         expect(KConfig.configuration.handlebars.helpers.length).to eq(0)
-        require_relative '../../lib/handlebarsjs/helpers/array/default_configuration'
+        KConfig.configuration.handlebars.defaults.add_array_defaults
         expect(KConfig.configuration.handlebars.helpers.length).to be > 0
       end
     end
 
     context 'for case helpers' do
-      it 'after require' do
+      it 'apply defaults' do
         KConfig.reset
         expect(KConfig.configuration.handlebars.helpers.length).to eq(0)
-        require_relative '../../lib/handlebarsjs/helpers/case/default_configuration'
+        KConfig.configuration.handlebars.defaults.add_case_defaults
         expect(KConfig.configuration.handlebars.helpers.length).to be > 0
       end
     end
 
     context 'for comparison helpers' do
-      it 'after require' do
+      it 'apply defaults' do
         KConfig.reset
         expect(KConfig.configuration.handlebars.helpers.length).to eq(0)
-        require_relative '../../lib/handlebarsjs/helpers/comparison/default_configuration'
+        KConfig.configuration.handlebars.defaults.add_comparison_defaults
         expect(KConfig.configuration.handlebars.helpers.length).to be > 0
       end
     end
 
     context 'for inflection helpers' do
-      it 'after require' do
+      it 'apply defaults' do
         KConfig.reset
         expect(KConfig.configuration.handlebars.helpers.length).to eq(0)
-        require_relative '../../lib/handlebarsjs/helpers/inflection/default_configuration'
+        KConfig.configuration.handlebars.defaults.add_inflection_defaults
         expect(KConfig.configuration.handlebars.helpers.length).to be > 0
       end
     end
