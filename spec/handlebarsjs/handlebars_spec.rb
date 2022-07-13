@@ -9,8 +9,21 @@ RSpec.describe Handlebarsjs::Handlebars do
   context 'initialize' do
     it { is_expected.to be_a described_class }
 
-    it 'should have a handlebars_snapshot' do
-      expect(instance.handlebars_snapshot).to be_a Handlebarsjs::HandlebarsSnapshot
+    context '.handlebars_snapshot' do
+      it 'should have a handlebars_snapshot' do
+        expect(instance.handlebars_snapshot).to be_a Handlebarsjs::HandlebarsSnapshot
+      end
+
+      describe '.scripts' do
+        subject { instance.handlebars_snapshot.scripts }
+
+        it { is_expected.to have_attributes(count: 2) }
+      end
+      describe '.helpers' do
+        subject { instance.handlebars_snapshot.helpers }
+
+        it { is_expected.to have_attributes(count: 0) }
+      end
     end
   end
 
@@ -126,5 +139,22 @@ RSpec.describe Handlebarsjs::Handlebars do
         end
       end
     end
+  end
+
+  context 'using configured helpers' do
+    before do
+      KConfig.configuration.handlebars.helper(:fullname, FullNameHelper.new)
+    end
+    after do
+      KConfig.reset
+    end
+
+    subject { instance.process_template(template, data) }
+
+    let(:template) { 'Hi {{fullname first last}}' }
+
+    let(:data) { { first: 'David', last: 'Cruwys' } }
+
+    it { is_expected.to eq('Hi David Cruwys') }
   end
 end

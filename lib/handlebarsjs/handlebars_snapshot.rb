@@ -6,6 +6,8 @@ module Handlebarsjs
   # in the correct order. So that new contexts are preloaded
   # with the handlebars library and the configured helpers.
   class HandlebarsSnapshot
+    include KLog::Logging
+
     attr_reader :scripts
     attr_reader :helpers
 
@@ -60,7 +62,8 @@ module Handlebarsjs
     end
 
     def debug
-      puts script
+      data = { scripts: scripts, helpers: helpers }
+      log.structure(data)
     end
 
     private
