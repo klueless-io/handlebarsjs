@@ -35,7 +35,7 @@ module Handlebarsjs
       @engine = nil
     end
 
-    def process_template(template, options = {})
+    def render(template, options = {})
       @engine.process_template(template, options)
     end
   end
