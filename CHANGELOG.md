@@ -1,3 +1,10 @@
+## [0.5.7](https://github.com/klueless-io/handlebarsjs/compare/v0.5.6...v0.5.7) (2022-07-13)
+
+
+### Bug Fixes
+
+* add catgegory default configurations ([8046805](https://github.com/klueless-io/handlebarsjs/commit/80468055f94e36ea682dbbfd26e7eb527db9ff82))
+
 ## [0.5.6](https://github.com/klueless-io/handlebarsjs/compare/v0.5.5...v0.5.6) (2022-07-13)
 
 
