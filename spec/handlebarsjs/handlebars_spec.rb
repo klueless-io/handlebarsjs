@@ -162,7 +162,7 @@ RSpec.describe Handlebarsjs::Handlebars do
         KConfig.reset
         expect(KConfig.configuration.handlebars.helpers.length).to eq(0)
         KConfig.configuration.handlebars.defaults.add_array_defaults
-        expect(KConfig.configuration.handlebars.helpers.length).to be > 0
+        expect(KConfig.configuration.handlebars.helpers.length).to be.positive?
       end
     end
 
@@ -171,7 +171,7 @@ RSpec.describe Handlebarsjs::Handlebars do
         KConfig.reset
         expect(KConfig.configuration.handlebars.helpers.length).to eq(0)
         KConfig.configuration.handlebars.defaults.add_case_defaults
-        expect(KConfig.configuration.handlebars.helpers.length).to be > 0
+        expect(KConfig.configuration.handlebars.helpers.length).to be.positive?
       end
     end
 
@@ -180,7 +180,7 @@ RSpec.describe Handlebarsjs::Handlebars do
         KConfig.reset
         expect(KConfig.configuration.handlebars.helpers.length).to eq(0)
         KConfig.configuration.handlebars.defaults.add_comparison_defaults
-        expect(KConfig.configuration.handlebars.helpers.length).to be > 0
+        expect(KConfig.configuration.handlebars.helpers.length).to be.positive?
       end
     end
 
@@ -189,7 +189,7 @@ RSpec.describe Handlebarsjs::Handlebars do
         KConfig.reset
         expect(KConfig.configuration.handlebars.helpers.length).to eq(0)
         KConfig.configuration.handlebars.defaults.add_inflection_defaults
-        expect(KConfig.configuration.handlebars.helpers.length).to be > 0
+        expect(KConfig.configuration.handlebars.helpers.length).to be.positive?
       end
     end
   end
