@@ -1,3 +1,10 @@
+## [0.6.1](https://github.com/klueless-io/handlebarsjs/compare/v0.6.0...v0.6.1) (2022-07-13)
+
+
+### Bug Fixes
+
+* add configuration and bump mini_racer, libv8 version ([7295f1d](https://github.com/klueless-io/handlebarsjs/commit/7295f1d98d9f461b4c95fd9ad587b2c9a37bbb96))
+
 # [0.6.0](https://github.com/klueless-io/handlebarsjs/compare/v0.5.7...v0.6.0) (2022-07-13)
 
 
