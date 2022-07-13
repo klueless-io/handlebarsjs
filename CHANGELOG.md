@@ -1,3 +1,10 @@
+## [0.5.6](https://github.com/klueless-io/handlebarsjs/compare/v0.5.5...v0.5.6) (2022-07-13)
+
+
+### Bug Fixes
+
+* add configuration capability to handlebars_snapshot ([06f7ca6](https://github.com/klueless-io/handlebarsjs/commit/06f7ca628018d4a89c9b068c8cae4565a624a3db))
+
 ## [0.5.5](https://github.com/klueless-io/handlebarsjs/compare/v0.5.4...v0.5.5) (2022-07-12)
 
 
