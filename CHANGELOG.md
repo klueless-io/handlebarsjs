@@ -1,3 +1,11 @@
+## [0.6.2](https://github.com/klueless-io/handlebarsjs/compare/v0.6.1...v0.6.2) (2022-07-13)
+
+
+### Bug Fixes
+
+* update rubocop.yml ([2188ecd](https://github.com/klueless-io/handlebarsjs/commit/2188ecdf7cd1201dbf60087a21467bc598c55c70))
+* update rubocop.yml ([006b69a](https://github.com/klueless-io/handlebarsjs/commit/006b69a061f5acd2d15e302c321730621cf5a212))
+
 ## [0.6.1](https://github.com/klueless-io/handlebarsjs/compare/v0.6.0...v0.6.1) (2022-07-13)
 
 
