@@ -3,6 +3,13 @@
 module Handlebarsjs
   # Pre-configure default helpers for each category
   class HandlebarsConfigurationDefaults
+    def add_all_defaults
+      add_array_defaults
+      add_case_defaults
+      add_comparison_defaults
+      add_inflection_defaults
+    end
+
     def add_array_defaults
       KConfig.configure do |config|
         config.handlebars.helper(:join, Handlebarsjs::Helpers::Array::Join.new)
