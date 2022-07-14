@@ -1,3 +1,10 @@
+## [0.6.3](https://github.com/klueless-io/handlebarsjs/compare/v0.6.2...v0.6.3) (2022-07-14)
+
+
+### Bug Fixes
+
+* add_all_defaults to configuration ([5755639](https://github.com/klueless-io/handlebarsjs/commit/575563988b17eb17807ce7b7b2ca76e06eba796d))
+
 ## [0.6.2](https://github.com/klueless-io/handlebarsjs/compare/v0.6.1...v0.6.2) (2022-07-13)
 
 
