@@ -13,26 +13,26 @@ module Handlebarsjs
     def add_array_defaults
       KConfig.configure do |config|
         config.handlebars.helper(:join, Handlebarsjs::Helpers::Array::Join.new)
-        config.handlebars.helper(:join_pre, Handlebarsjs::Helpers::Array::JoinPre.new)
         config.handlebars.helper(:join_post, Handlebarsjs::Helpers::Array::JoinPost.new)
+        config.handlebars.helper(:join_pre, Handlebarsjs::Helpers::Array::JoinPre.new)
       end
     end
 
     def add_case_defaults
       KConfig.configure do |config|
-        config.handlebars.helper(:back_slash, Handlebarsjs::Helpers::Case::BackSlash.new)
-        config.handlebars.helper(:camel, Handlebarsjs::Helpers::Case::Camel.new)
-        config.handlebars.helper(:constant, Handlebarsjs::Helpers::Case::Constant.new)
-        config.handlebars.helper(:dash, Handlebarsjs::Helpers::Case::Dash.new)
-        config.handlebars.helper(:dot, Handlebarsjs::Helpers::Case::Dot.new)
+        config.handlebars.helper(:back_slash, Handlebarsjs::Helpers::Case::BackSlash.new, aliases: %i[backward_slash slash_backward])
+        config.handlebars.helper(:camel, Handlebarsjs::Helpers::Case::Camel.new, aliases: %i[camel_upper camelUpper camelU pascalcase])
+        config.handlebars.helper(:constant, Handlebarsjs::Helpers::Case::Constant.new, aliases: %i[constantize])
+        config.handlebars.helper(:dash, Handlebarsjs::Helpers::Case::Dash.new, aliases: %i[dasherize dashify dashcase hyphenate])
+        config.handlebars.helper(:dot, Handlebarsjs::Helpers::Case::Dot.new, aliases: %i[dotirize dotify dotcase hyphenate])
         config.handlebars.helper(:double_colon, Handlebarsjs::Helpers::Case::DoubleColon.new)
-        config.handlebars.helper(:human, Handlebarsjs::Helpers::Case::Human.new)
-        config.handlebars.helper(:lamel, Handlebarsjs::Helpers::Case::Lamel.new)
-        config.handlebars.helper(:lower, Handlebarsjs::Helpers::Case::Lower.new)
-        config.handlebars.helper(:slash, Handlebarsjs::Helpers::Case::Slash.new)
+        config.handlebars.helper(:human, Handlebarsjs::Helpers::Case::Human.new, aliases: %i[humanize sentence])
+        config.handlebars.helper(:lamel, Handlebarsjs::Helpers::Case::Lamel.new, aliases: %i[camel_lower camelLower camelL])
+        config.handlebars.helper(:lower, Handlebarsjs::Helpers::Case::Lower.new, aliases: %i[lowercase downcase])
+        config.handlebars.helper(:slash, Handlebarsjs::Helpers::Case::Slash.new, aliases: %i[forward_slash slash_forward])
         config.handlebars.helper(:snake, Handlebarsjs::Helpers::Case::Snake.new)
         config.handlebars.helper(:title, Handlebarsjs::Helpers::Case::Title.new)
-        config.handlebars.helper(:upper, Handlebarsjs::Helpers::Case::Upper.new)
+        config.handlebars.helper(:upper, Handlebarsjs::Helpers::Case::Upper.new, aliases: %i[upcase uppercase])
       end
     end
 

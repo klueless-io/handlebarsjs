@@ -16,8 +16,13 @@ module Handlebarsjs
 
     HelperConfig = Struct.new(:name, :helper)
 
-    def helper(name, helper)
-      @helpers << HelperConfig.new(name, helper)
+    def helper(name, helper, aliases: [])
+      names = [name.to_sym]
+      names = (names + aliases.map(&:to_sym)).uniq
+
+      names.each do |helper_name|
+        @helpers << HelperConfig.new(helper_name, helper)
+      end
     end
   end
 end

@@ -13,24 +13,27 @@ RSpec.describe Handlebarsjs::HandlebarsConfiguration do
   it { is_expected.to have_attributes(helpers: []) }
 
   context 'when helper added with' do
-    before { instance.helper(:freaky, helper1) }
+    context 'when helper with aliases' do
+      before { instance.helper(:freaky, helper1, aliases: %i[thursday friday]) }
 
-    it 'should add helper to helpers' do
-      expect(instance.helpers).to eq([
-                                       Handlebarsjs::HandlebarsConfiguration::HelperConfig.new(:freaky, helper1)
-                                     ])
+      it 'should add helper to helpers' do
+        expect(instance.helpers).to eq([
+                                         Handlebarsjs::HandlebarsConfiguration::HelperConfig.new(:freaky, helper1),
+                                         Handlebarsjs::HandlebarsConfiguration::HelperConfig.new(:thursday, helper1),
+                                         Handlebarsjs::HandlebarsConfiguration::HelperConfig.new(:friday, helper1)
+                                       ])
+      end
     end
 
-    context 'when more helpers added with multiple aliases' do
+    context 'when multiple helpers' do
       before do
-        instance.helper(:friday, helper1)
+        instance.helper(:freaky, helper1)
         instance.helper(:different, helper2)
       end
 
       it 'should add more helpers including duplicates (aka aliases)' do
         expect(instance.helpers).to eq([
                                          Handlebarsjs::HandlebarsConfiguration::HelperConfig.new(:freaky, helper1),
-                                         Handlebarsjs::HandlebarsConfiguration::HelperConfig.new(:friday, helper1),
                                          Handlebarsjs::HandlebarsConfiguration::HelperConfig.new(:different, helper2)
                                        ])
       end

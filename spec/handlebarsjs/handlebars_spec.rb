@@ -167,7 +167,7 @@ RSpec.describe Handlebarsjs::Handlebars do
     end
 
     context 'for case helpers' do
-      it 'apply defaults' do
+      fit 'apply defaults' do
         KConfig.reset
         expect(KConfig.configuration.handlebars.helpers.length).to eq(0)
         KConfig.configuration.handlebars.defaults.add_case_defaults
