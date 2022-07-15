@@ -1,3 +1,10 @@
+# [0.7.0](https://github.com/klueless-io/handlebarsjs/compare/v0.6.3...v0.7.0) (2022-07-15)
+
+
+### Features
+
+* add alias support ([ae81c61](https://github.com/klueless-io/handlebarsjs/commit/ae81c61d569dd44e9ae50832f69a0f29d30e9523))
+
 ## [0.6.3](https://github.com/klueless-io/handlebarsjs/compare/v0.6.2...v0.6.3) (2022-07-14)
 
 
