@@ -10,7 +10,6 @@ module Handlebarsjs
 
         def to_proc
           ->(value, _opts) { wrapper(cmdlet.call(value)) }
-          
         end
       end
     end
