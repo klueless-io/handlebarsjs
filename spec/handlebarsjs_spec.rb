@@ -36,6 +36,17 @@ RSpec.describe Handlebarsjs do
       expect(colors).to eq(%w[red yellow blue])
     end
 
+    it 'can execute ruby code from javascript' do
+      our_ruby = proc do |name|
+        "|#{name}|"
+      end
+
+      context.attach('some_ruby', our_ruby)
+      message = context.eval('some_ruby("go ricky")')
+
+      expect(message).to eq('|go ricky|')
+    end
+
     it 'can execute handlebars template' do
       javascript = <<-JAVASCRIPT
 
@@ -46,6 +57,7 @@ RSpec.describe Handlebarsjs do
 
       output = context.eval(javascript)
 
+      puts output
       expect(output).to eq('Hello: World')
     end
 
@@ -97,7 +109,7 @@ RSpec.describe Handlebarsjs do
       context.eval(process_template_script)
       message = context.call('process_template', handlebars_template, { data: data })
 
-      # puts message
+      puts message
       expect(message).to eq("The quick brown Dog jumps over the lazy Fox\n")
     end
 
@@ -107,13 +119,25 @@ RSpec.describe Handlebarsjs do
       TEXT
 
       context.eval(process_template)
-      message = context.call('process_template', handlebars_template, { name: 'david' })
+      message = context.call('process_template', handlebars_template, { name: 'david' }).squish
 
-      puts message
-      expect(message).to eq("Hello DAVID\n")
+      # puts message
+      expect(message).to eq('Hello DAVID')
     end
 
-    it 'can execute handlebars template pre-registered ruby helper' do
+    it 'can execute handlebars template with pre-registered javascript helper using SafeString' do
+      handlebars_template = <<~TEXT
+        {{allow_html html}}
+      TEXT
+
+      context.eval(process_template)
+      message = context.call('process_template', handlebars_template, { html: '<hello name="world" />' }).squish
+
+      # puts message
+      expect(message).to eq('<hello name="world" />')
+    end
+
+    it 'can execute handlebars template using pre-registered ruby helper' do
       handlebars_template = <<~TEXT
         Hello {{surround name}}
       TEXT
@@ -124,10 +148,34 @@ RSpec.describe Handlebarsjs do
 
       context.eval("Handlebars.registerHelper('surround', ruby_surround)")
       context.eval(process_template)
-      message = context.call('process_template', handlebars_template, { name: 'david' })
+      message = context.call('process_template', handlebars_template, { name: 'david' }).squish
 
-      puts message
-      expect(message).to eq("Hello |david|\n")
+      expect(message).to eq('Hello |david|')
+      # puts message
+    end
+
+    it 'can execute handlebars template pre-registered ruby helper wrapped in SafeString decorator' do
+      handlebars_template = <<~TEXT
+        {{i_am_safe value1 value2}}
+      TEXT
+
+      context.attach('ruby_i_am_safe', proc do |value1, value2|
+        "#{value1} #{value2}"
+      end)
+
+      javascript_safe_string_helper_wrapper = <<-JAVASCRIPT
+        Handlebars.registerHelper('i_am_safe', function (value1, value2) {
+          return new Handlebars.SafeString(ruby_i_am_safe(value1, value2));
+        })
+      JAVASCRIPT
+
+      context.eval(javascript_safe_string_helper_wrapper)
+      context.eval(process_template)
+
+      message = context.call('process_template', handlebars_template, { value1: '<hello />', value2: '"NAME"' }).squish
+
+      # puts message
+      expect(message).to eq('<hello /> "NAME"')
     end
   end
 end

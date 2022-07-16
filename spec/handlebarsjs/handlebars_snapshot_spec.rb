@@ -52,23 +52,46 @@ RSpec.describe Handlebarsjs::HandlebarsSnapshot do
 
     it { is_expected.to be_empty }
 
-    context 'when helper is a lambda expression' do
-      it 'adds a helper' do
+    context 'when helper entry is a lambda expression' do
+      it '#add_callback' do
         callback = ->(name) { "Hello, #{name}!" }
-        entry = instance.add_helper('hello', callback)
+        entry = instance.add_callback('hello', callback, false, %i[name])
 
-        expect(entry).to include({ name: 'hello', callback: callback, helper: nil })
-        expect(subject).to include({ name: 'hello', callback: callback, helper: nil })
+        expect(entry).to include(
+          name: 'hello',
+          callback: callback,
+          helper: nil,
+          safe: false,
+          parameters: %i[name]
+        )
       end
     end
 
-    context 'when helper implements a cmdlet' do
-      it 'adds a helper' do
-        helper = SampleHandlebarsHelper1.new
+    context 'when helper entry is a BaseHelper' do
+      it '#add_helper - example 1' do
+        helper = SampleSafeStringTrueHelper.new
         entry = instance.add_helper('sample', helper)
 
-        expect(entry).to include({ name: 'sample', callback: be_a(Proc), helper: helper })
-        expect(subject).to include({ name: 'sample', callback: be_a(Proc), helper: helper })
+        expect(entry).to include(
+          name: 'sample',
+          callback: be_a(Proc),
+          helper: helper,
+          safe: true,
+          parameters: %i[value]
+        )
+      end
+
+      it '#add_helper - example 2' do
+        helper = SampleMultipleParamaterHandlebarsHelper.new
+        entry = instance.add_helper('multiple', helper)
+
+        expect(entry).to include(
+          name: 'multiple',
+          callback: be_a(Proc),
+          helper: helper,
+          safe: false,
+          parameters: %i[value1 value2]
+        )
       end
     end
   end

@@ -27,6 +27,18 @@ RSpec.describe Handlebarsjs::Handlebars do
     end
   end
 
+  describe '#register_helper_script' do
+    subject { described_class.register_helper_script('some_name').squish }
+
+    it { is_expected.to eq("Handlebars.registerHelper('some_name', ruby_some_name)") }
+  end
+
+  describe '#register_safe_string_helper_script' do
+    subject { described_class.register_safe_string_helper_script('some_name', %i[xxx yyy]).squish }
+
+    it { is_expected.to eq("Handlebars.registerHelper('some_name', function (xxx, yyy, _opts) { return new Handlebars.SafeString(ruby_some_name(xxx, yyy, _opts)); })") }
+  end
+
   describe '#process_template' do
     subject { instance.process_template(template, data) }
 
@@ -105,12 +117,12 @@ RSpec.describe Handlebarsjs::Handlebars do
       end
 
       context 'when Ruby helper provided' do
-        before { instance.handlebars_snapshot.add_helper(helper_name, helper) }
-
-        let(:helper_name) { 'full_name' }
+        let(:name) { 'full_name' }
 
         context 'as callback' do
-          let(:helper) { ->(person, _opts) { "#{person['first']} #{person['last']}" } }
+          before { instance.handlebars_snapshot.add_callback(name, callback, false, %i[person]) }
+
+          let(:callback) { ->(person, _opts) { "#{person['first']} #{person['last']}" } }
 
           context '.process_template' do
             subject { instance.process_template(template, data) }
@@ -118,23 +130,28 @@ RSpec.describe Handlebarsjs::Handlebars do
             it { is_expected.to eq('Hi David Cruwys') }
           end
         end
-        context 'as class with standard methods' do
-          let(:helper) { PersonFullNameHelper.new }
 
-          context '.process_template' do
-            subject { instance.process_template(template, data) }
+        context 'as helper' do
+          before { instance.handlebars_snapshot.add_helper(name, helper) }
 
-            it { is_expected.to eq('Hi David Cruwys') }
+          context 'as class with standard methods' do
+            let(:helper) { PersonFullNameHelper.new }
+
+            context '.process_template' do
+              subject { instance.process_template(template, data) }
+
+              it { is_expected.to eq('Hi David Cruwys') }
+            end
           end
-        end
-        context 'as class with custom methods' do
-          let(:helper) { FullNameHelper.new }
-          let(:template) { 'Hi {{full_name person.first person.last}}' }
+          context 'as class with custom methods' do
+            let(:helper) { FullNameHelper.new }
+            let(:template) { 'Hi {{full_name person.first person.last}}' }
 
-          context '.process_template' do
-            subject { instance.process_template(template, data) }
+            context '.process_template' do
+              subject { instance.process_template(template, data) }
 
-            it { is_expected.to eq('Hi David Cruwys') }
+              it { is_expected.to eq('Hi David Cruwys') }
+            end
           end
         end
       end
@@ -157,39 +174,23 @@ RSpec.describe Handlebarsjs::Handlebars do
 
     it { is_expected.to eq('Hi David Cruwys') }
 
-    context 'for array helpers' do
-      it 'apply defaults' do
-        KConfig.reset
-        expect(KConfig.configuration.handlebars.helpers.length).to eq(0)
-        KConfig.configuration.handlebars.defaults.add_array_defaults
-        expect(KConfig.configuration.handlebars.helpers.length).to be > 0
-      end
-    end
+    context 'add helpers' do
+      before { KConfig.reset }
 
-    context 'for case helpers' do
-      fit 'apply defaults' do
-        KConfig.reset
-        expect(KConfig.configuration.handlebars.helpers.length).to eq(0)
-        KConfig.configuration.handlebars.defaults.add_case_defaults
-        expect(KConfig.configuration.handlebars.helpers.length).to be > 0
+      it '-> array helpers' do
+        expect { KConfig.configuration.handlebars.defaults.add_array_defaults }.to change { KConfig.configuration.handlebars.helpers.length }
       end
-    end
 
-    context 'for comparison helpers' do
-      it 'apply defaults' do
-        KConfig.reset
-        expect(KConfig.configuration.handlebars.helpers.length).to eq(0)
-        KConfig.configuration.handlebars.defaults.add_comparison_defaults
-        expect(KConfig.configuration.handlebars.helpers.length).to be > 0
+      it '-> case helpers' do
+        expect { KConfig.configuration.handlebars.defaults.add_case_defaults }.to change { KConfig.configuration.handlebars.helpers.length }
       end
-    end
 
-    context 'for inflection helpers' do
-      it 'apply defaults' do
-        KConfig.reset
-        expect(KConfig.configuration.handlebars.helpers.length).to eq(0)
-        KConfig.configuration.handlebars.defaults.add_inflection_defaults
-        expect(KConfig.configuration.handlebars.helpers.length).to be > 0
+      it '-> comparison helpers' do
+        expect { KConfig.configuration.handlebars.defaults.add_comparison_defaults }.to change { KConfig.configuration.handlebars.helpers.length }
+      end
+
+      it '-> inflection helpers' do
+        expect { KConfig.configuration.handlebars.defaults.add_inflection_defaults }.to change { KConfig.configuration.handlebars.helpers.length }
       end
     end
   end

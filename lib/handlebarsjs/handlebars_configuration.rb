@@ -1,8 +1,7 @@
 # frozen_string_literal: true
 
 module Handlebarsjs
-  # handlebars.handlebars_snapshot.add_helper(helper_name, helper)
-  # Structure for storing Cmdlet configuration
+  # Configuration data such has helpers for handlebarsjs
   class HandlebarsConfiguration
     include KLog::Logging
 

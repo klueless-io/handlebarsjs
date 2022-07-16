@@ -8,6 +8,7 @@ module Handlebarsjs
       add_case_defaults
       add_comparison_defaults
       add_inflection_defaults
+      add_misc_defaults
     end
 
     def add_array_defaults
@@ -31,7 +32,7 @@ module Handlebarsjs
         config.handlebars.helper(:lower, Handlebarsjs::Helpers::Case::Lower.new, aliases: %i[lowercase downcase])
         config.handlebars.helper(:slash, Handlebarsjs::Helpers::Case::Slash.new, aliases: %i[forward_slash slash_forward])
         config.handlebars.helper(:snake, Handlebarsjs::Helpers::Case::Snake.new)
-        config.handlebars.helper(:title, Handlebarsjs::Helpers::Case::Title.new)
+        config.handlebars.helper(:title, Handlebarsjs::Helpers::Case::Title.new, aliases: %i[titleize])
         config.handlebars.helper(:upper, Handlebarsjs::Helpers::Case::Upper.new, aliases: %i[upcase uppercase])
       end
     end
@@ -58,6 +59,12 @@ module Handlebarsjs
         config.handlebars.helper(:pluralize_number, Handlebarsjs::Helpers::Inflection::PluralizeNumber.new)
         config.handlebars.helper(:pluralize_number_word, Handlebarsjs::Helpers::Inflection::PluralizeNumberWord.new)
         config.handlebars.helper(:singularize, Handlebarsjs::Helpers::Inflection::Singularize.new)
+      end
+    end
+
+    def add_misc_defaults
+      KConfig.configure do |config|
+        config.handlebars.helper(:safe, Handlebarsjs::Helpers::Misc::Safe.new)
       end
     end
   end

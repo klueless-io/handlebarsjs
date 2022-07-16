@@ -10,6 +10,24 @@ module Handlebarsjs
       add_configured_helpers
     end
 
+    class << self
+      def register_helper_script(name)
+        <<-JAVASCRIPT
+          Handlebars.registerHelper('#{name}', ruby_#{name})
+        JAVASCRIPT
+      end
+
+      def register_safe_string_helper_script(name, parameter_names)
+        parameters = (parameter_names + ['_opts']).join(', ')
+
+        <<-JAVASCRIPT
+          Handlebars.registerHelper('#{name}', function (#{parameters}) {
+            return new Handlebars.SafeString(ruby_#{name}(#{parameters}));
+          })
+        JAVASCRIPT
+      end
+    end
+
     def process_template(template, options = {})
       # TODO: process template function may be improved with some type of caching
       context.call('process_template', template, options)
