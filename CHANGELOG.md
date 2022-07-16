@@ -1,3 +1,10 @@
+# [0.9.0](https://github.com/klueless-io/handlebarsjs/compare/v0.8.0...v0.9.0) (2022-07-16)
+
+
+### Features
+
+* add safe support ([edc7062](https://github.com/klueless-io/handlebarsjs/commit/edc70623130ca6ae397b3532e4609ffd825cd7a3))
+
 # [0.8.0](https://github.com/klueless-io/handlebarsjs/compare/v0.7.0...v0.8.0) (2022-07-16)
 
 
