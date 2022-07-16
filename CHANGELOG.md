@@ -1,3 +1,17 @@
+# [0.8.0](https://github.com/klueless-io/handlebarsjs/compare/v0.7.0...v0.8.0) (2022-07-16)
+
+
+### Bug Fixes
+
+* test gha tests ([d4d8c9c](https://github.com/klueless-io/handlebarsjs/commit/d4d8c9c6802fc9ea2543f72a22718dac4b424b90))
+* test gha tests ([d3284d8](https://github.com/klueless-io/handlebarsjs/commit/d3284d8d0049a38c0aa9f72adde07d2d8c4b8229))
+
+
+### Features
+
+* add safe support ([83a81c7](https://github.com/klueless-io/handlebarsjs/commit/83a81c751e3acb69a9befb88b86122fcf1a20abc))
+* add safe support ([c458f6d](https://github.com/klueless-io/handlebarsjs/commit/c458f6d3e1d0101840af6898ea3067ad828fb5fb))
+
 # [0.7.0](https://github.com/klueless-io/handlebarsjs/compare/v0.6.3...v0.7.0) (2022-07-15)
 
 
