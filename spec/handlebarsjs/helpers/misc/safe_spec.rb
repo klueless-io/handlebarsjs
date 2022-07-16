@@ -15,6 +15,7 @@ RSpec.describe Handlebarsjs::Helpers::Misc::Safe do
 
     let(:template) { '{{safe value}}' }
 
+    # test gha
     it { is_expected.to eq('<hello name="world" />') }
   end
 end
