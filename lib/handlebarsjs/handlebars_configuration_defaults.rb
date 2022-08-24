@@ -9,6 +9,7 @@ module Handlebarsjs
       add_comparison_defaults
       add_inflection_defaults
       add_misc_defaults
+      add_str_defaults
     end
 
     def add_array_defaults
@@ -65,6 +66,13 @@ module Handlebarsjs
     def add_misc_defaults
       KConfig.configure do |config|
         config.handlebars.helper(:safe, Handlebarsjs::Helpers::Misc::Safe.new)
+      end
+    end
+
+    def add_str_defaults
+      KConfig.configure do |config|
+        config.handlebars.helper(:padl, Handlebarsjs::Helpers::Str::Padl.new)
+        config.handlebars.helper(:padr, Handlebarsjs::Helpers::Str::Padr.new)
       end
     end
   end

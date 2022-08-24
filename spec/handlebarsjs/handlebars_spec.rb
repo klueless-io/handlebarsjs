@@ -66,18 +66,18 @@ RSpec.describe Handlebarsjs::Handlebars do
       it { is_expected.to eq('--------HELLO--------') }
     end
 
-    xcontext 'allow Ruby blocks in data' do
-      # This example came from Cowboyd, but is not available in RubyRacer from what I can tell
-      let(:template) do
-        <<~TEXT.chomp
-          Hi {{name}}
-        TEXT
-      end
+    # xcontext 'allow Ruby blocks in data' do
+    #   # This example came from Cowboyd, but is not available in RubyRacer from what I can tell
+    #   let(:template) do
+    #     <<~TEXT.chomp
+    #       Hi {{name}}
+    #     TEXT
+    #   end
 
-      let(:data) { { name: ->(_context) { 'Mate' } } }
+    #   let(:data) { { name: ->(_context) { 'Mate' } } }
 
-      it { is_expected.to eq('Hi Mate') }
-    end
+    #   it { is_expected.to eq('Hi Mate') }
+    # end
 
     context 'handlebars helpers' do
       let(:template) do
