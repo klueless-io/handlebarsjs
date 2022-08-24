@@ -1,3 +1,10 @@
+# [0.10.0](https://github.com/klueless-io/handlebarsjs/compare/v0.9.0...v0.10.0) (2022-08-24)
+
+
+### Features
+
+* add str: :padl and str: padr ([2d56458](https://github.com/klueless-io/handlebarsjs/commit/2d5645812de730c8d9ee96cb8509fa9b8f5399d2))
+
 # [0.9.0](https://github.com/klueless-io/handlebarsjs/compare/v0.8.0...v0.9.0) (2022-07-16)
 
 
