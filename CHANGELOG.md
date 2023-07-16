@@ -1,3 +1,10 @@
+# [0.11.0](https://github.com/klueless-io/handlebarsjs/compare/v0.10.0...v0.11.0) (2023-07-16)
+
+
+### Features
+
+* add format_json ([29d8b2b](https://github.com/klueless-io/handlebarsjs/commit/29d8b2b036563e2b6b374942914053e4d8b831e9))
+
 # [0.10.0](https://github.com/klueless-io/handlebarsjs/compare/v0.9.0...v0.10.0) (2022-08-24)
 
 
