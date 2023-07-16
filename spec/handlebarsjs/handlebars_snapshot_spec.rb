@@ -156,7 +156,7 @@ RSpec.describe Handlebarsjs::HandlebarsSnapshot do
         subject { instance.scripts }
 
         it { is_expected.to have_attributes(count: 1) }
-        it { expect(subject.first).to include(name: 'sample 1', type: 'library', script: "function sample1() {\n  return \'sample1\';\n}", path: 'spec/mocks/sample-library-1.js') }
+        it { expect(subject.first).to include(name: 'sample 1', type: 'library', script: "function sample1() {\n  return 'sample1';\n}", path: 'spec/mocks/sample-library-1.js') }
 
         describe '#script' do
           subject { instance.script }
@@ -170,8 +170,8 @@ RSpec.describe Handlebarsjs::HandlebarsSnapshot do
           end
 
           it { is_expected.to have_attributes(count: 2) }
-          it { expect(subject.first).to include(name: 'sample 1', type: 'library', script: "function sample1() {\n  return \'sample1\';\n}", path: 'spec/mocks/sample-library-1.js') }
-          it { expect(subject.last).to include(name: 'sample 2', type: 'library', script: "function sample2() {\n  return \'sample2\';\n}", path: 'spec/mocks/sample-library-2.js') }
+          it { expect(subject.first).to include(name: 'sample 1', type: 'library', script: "function sample1() {\n  return 'sample1';\n}", path: 'spec/mocks/sample-library-1.js') }
+          it { expect(subject.last).to include(name: 'sample 2', type: 'library', script: "function sample2() {\n  return 'sample2';\n}", path: 'spec/mocks/sample-library-2.js') }
 
           describe '#script' do
             subject { instance.script }

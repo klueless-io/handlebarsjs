@@ -26,6 +26,7 @@
 *.o
 *.a
 mkmf.log
+.DS_Store
 
 # Ruby Version
 .ruby-version
