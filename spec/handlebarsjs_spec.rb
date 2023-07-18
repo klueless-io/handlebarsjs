@@ -177,5 +177,32 @@ RSpec.describe Handlebarsjs do
       # puts message
       expect(message).to eq('<hello /> "NAME"')
     end
+
+    it 'can create surround template in javascript' do
+      context.eval <<-JAVASCRIPT
+
+      Handlebars.registerHelper("trapped", function(options) {
+        return new Handlebars.SafeString('No way forward |' + options.fn(this) + " | no way back");
+      });
+
+      JAVASCRIPT
+
+      handlebars_template = '{{#trapped}}I am{{/trapped}}'
+
+      context.eval(process_template)
+      message = context.call('process_template', handlebars_template).squish
+
+      expect(message).to eq('No way forward |I am | no way back')
+    end
+
+    it 'can omit content' do
+      handlebars_template = '{{#omit}}Look at me{{/omit}}'
+      context.eval(process_template)
+
+      # output = context.eval(process_template)
+      message = context.call('process_template', handlebars_template).squish
+
+      expect(message).to be_empty
+    end
   end
 end

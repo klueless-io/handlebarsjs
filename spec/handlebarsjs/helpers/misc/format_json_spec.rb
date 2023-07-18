@@ -11,12 +11,10 @@ RSpec.describe Handlebarsjs::Helpers::Misc::FormatJson do
   describe '#process_template' do
     subject { handlebars.process_template(template, data).squish }
 
-    let(:lhs) { nil }
-    let(:rhs) { nil }
-    let(:data) { { lhs: lhs, rhs: rhs } }
+    let(:data) { { value: '<hello>World</hello>' } }
 
-    let(:template) do
-      ''.chomp
-    end
+    let(:template) { '{{format_json value}}' }
+
+    it { is_expected.to eq('&quot;&lt;hello&gt;World&lt;/hello&gt;&quot;') }
   end
 end
