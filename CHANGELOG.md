@@ -1,3 +1,11 @@
+# [0.12.0](https://github.com/klueless-io/handlebarsjs/compare/v0.11.3...v0.12.0) (2023-07-19)
+
+
+### Features
+
+* add omit ([cd516d1](https://github.com/klueless-io/handlebarsjs/commit/cd516d11c3f4e304952d6bbbcd31140c82edf11d))
+* reset version ([dff1b8e](https://github.com/klueless-io/handlebarsjs/commit/dff1b8e710a9e433610f5a4326c8b4e9d4a927b9))
+
 ## [0.11.3](https://github.com/klueless-io/handlebarsjs/compare/v0.11.2...v0.11.3) (2023-07-19)
 
 
