@@ -133,11 +133,7 @@ module Handlebarsjs
     end
 
     def eval_register_helper(context, helper_entry)
-      script = if helper_entry[:safe]
-                 Handlebarsjs::Handlebars.register_safe_string_helper_script(helper_entry[:name], helper_entry[:parameters])
-               else
-                 Handlebarsjs::Handlebars.register_helper_script(helper_entry[:name])
-               end
+      script = build_register_helper_script(helper_entry)
 
       context.eval(script)
     end
