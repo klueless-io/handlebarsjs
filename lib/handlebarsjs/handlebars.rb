@@ -48,9 +48,7 @@ module Handlebarsjs
         ruby_parameters = parameters.length.positive? ? ", #{parameters}" : ''
 
         <<-JAVASCRIPT
-          console.log('block_helper:1111:#{name}')
           Handlebars.registerHelper('#{name}', function (#{parameters}) {
-            console.log('block_helper:2222:#{name}')
             return ruby_#{name}(opts.fn(this)#{ruby_parameters});
           })
         JAVASCRIPT
