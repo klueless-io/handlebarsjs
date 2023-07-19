@@ -1,3 +1,10 @@
+## [0.11.3](https://github.com/klueless-io/handlebarsjs/compare/v0.11.2...v0.11.3) (2023-07-19)
+
+
+### Bug Fixes
+
+* remove omit config ([2e16f46](https://github.com/klueless-io/handlebarsjs/commit/2e16f46ba439606475174ec4ad96d873a5c380c6))
+
 ## [0.11.2](https://github.com/klueless-io/handlebarsjs/compare/v0.11.1...v0.11.2) (2023-07-19)
 
 
