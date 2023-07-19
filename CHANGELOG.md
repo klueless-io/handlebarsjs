@@ -1,3 +1,10 @@
+## [0.11.1](https://github.com/klueless-io/handlebarsjs/compare/v0.11.0...v0.11.1) (2023-07-19)
+
+
+### Bug Fixes
+
+* fix safe string usage ([2d2b9aa](https://github.com/klueless-io/handlebarsjs/commit/2d2b9aa16d81d30b3d1f02b89a2abe336e8c9bd7))
+
 # [0.11.0](https://github.com/klueless-io/handlebarsjs/compare/v0.10.0...v0.11.0) (2023-07-16)
 
 
