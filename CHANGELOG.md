@@ -1,3 +1,10 @@
+## [0.11.2](https://github.com/klueless-io/handlebarsjs/compare/v0.11.1...v0.11.2) (2023-07-19)
+
+
+### Bug Fixes
+
+* add safe capability ([3c1fd95](https://github.com/klueless-io/handlebarsjs/commit/3c1fd95effc1e771bd840b408e010ef85610e48c))
+
 ## [0.11.1](https://github.com/klueless-io/handlebarsjs/compare/v0.11.0...v0.11.1) (2023-07-19)
 
 
