@@ -66,7 +66,6 @@ module Handlebarsjs
     def add_misc_defaults
       KConfig.configure do |config|
         config.handlebars.helper(:format_json, Handlebarsjs::Helpers::Misc::FormatJson.new)
-        config.handlebars.helper(:omit, Handlebarsjs::Helpers::Misc::Omit.new, aliases: %i[ignore comment_out])
         config.handlebars.helper(:safe, Handlebarsjs::Helpers::Misc::Safe.new)
       end
     end
