@@ -139,9 +139,18 @@ module Handlebarsjs
     end
 
     def build_register_helper_script(helper_entry)
-      return Handlebarsjs::Handlebars.register_safe_string_helper_script(helper_entry[:name], helper_entry[:parameters]) if helper_entry[:safe]
+      # When registering a helper, set the safe flag to true when you want a HTML Safe String
+      # register_cmdlet(Cmdlet::SomeHtmlCommand, safe: true, parameter_names: %i[value])
+      name = helper_entry[:name]
+      safe = helper_entry[:safe] || false
+      block = helper_entry[:block] || false
+      parameter_names = helper_entry[:parameters] || []
 
-      Handlebarsjs::Handlebars.register_helper_script(helper_entry[:name])
+      Handlebarsjs::Handlebars.register_helper_script(name, parameter_names, safe: safe, block: block)
+
+      #   return Handlebarsjs::Handlebars.register_safe_string_helper_script(helper_entry[:name], helper_entry[:parameters]) if helper_entry[:safe]
+
+      #   Handlebarsjs::Handlebars.register_helper_script(helper_entry[:name])
     end
   end
 end

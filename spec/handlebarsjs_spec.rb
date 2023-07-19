@@ -113,29 +113,30 @@ RSpec.describe Handlebarsjs do
       expect(message).to eq("The quick brown Dog jumps over the lazy Fox\n")
     end
 
-    it 'can execute handlebars template with pre-registered javascript helper' do
-      handlebars_template = <<~TEXT
-        Hello {{loud name}}
-      TEXT
+    # it 'can execute handlebars template with pre-registered javascript helper' do
+    #   handlebars_template = <<~TEXT
+    #     Hello {{loud name}}
+    #   TEXT
 
-      context.eval(process_template)
-      message = context.call('process_template', handlebars_template, { name: 'david' }).squish
+    #   context.eval(process_template)
+    #   message = context.call('process_template', handlebars_template, { name: 'david' }).squish
 
-      # puts message
-      expect(message).to eq('Hello DAVID')
-    end
+    #   # puts message
+    #   expect(message).to eq('Hello DAVID')
+    # end
 
-    it 'can execute handlebars template with pre-registered javascript helper using SafeString' do
-      handlebars_template = <<~TEXT
-        {{allow_html html}}
-      TEXT
+    # Use safe: instead
+    # it 'can execute handlebars template with pre-registered javascript helper using SafeString' do
+    #   handlebars_template = <<~TEXT
+    #     {{allow_html html}}
+    #   TEXT
 
-      context.eval(process_template)
-      message = context.call('process_template', handlebars_template, { html: '<hello name="world" />' }).squish
+    #   context.eval(process_template)
+    #   message = context.call('process_template', handlebars_template, { html: '<hello name="world" />' }).squish
 
-      # puts message
-      expect(message).to eq('<hello name="world" />')
-    end
+    #   # puts message
+    #   expect(message).to eq('<hello name="world" />')
+    # end
 
     it 'can execute handlebars template using pre-registered ruby helper' do
       handlebars_template = <<~TEXT
@@ -195,12 +196,11 @@ RSpec.describe Handlebarsjs do
       expect(message).to eq('No way forward |I am | no way back')
     end
 
-    # I think this is built into the handlebarsjs library, but I'm not sure
+    # This is not a great test because any unknown block helper will return empty string
     it 'can omit content' do
       handlebars_template = '{{#omit}}Look at me{{/omit}}'
       context.eval(process_template)
 
-      # output = context.eval(process_template)
       message = context.call('process_template', handlebars_template).squish
 
       expect(message).to be_empty

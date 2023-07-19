@@ -16,6 +16,7 @@ require_relative '_'
 module Handlebarsjs
   HANDLEBARS_LIBRARY_PATH = 'lib/handlebarsjs/javascript/handlebars-4.7.7.js'
   HANDLEBARS_API_PATH = 'lib/handlebarsjs/javascript/handlebars-api.js'
+  HANDLEBARS_HELPERS_PATH = 'lib/handlebarsjs/javascript/handlebars-helpers.js'
 
   # raise Handlebarsjs::Error, 'Sample message'
   Error = Class.new(StandardError)

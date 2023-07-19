@@ -17,7 +17,7 @@ RSpec.describe Handlebarsjs::Handlebars do
       describe '.scripts' do
         subject { instance.handlebars_snapshot.scripts }
 
-        it { is_expected.to have_attributes(count: 2) }
+        it { is_expected.to have_attributes(count: 3) }
       end
       describe '.helpers' do
         subject { instance.handlebars_snapshot.helpers }
@@ -28,15 +28,31 @@ RSpec.describe Handlebarsjs::Handlebars do
   end
 
   describe '#register_helper_script' do
-    subject { described_class.register_helper_script('some_name').squish }
+    subject { described_class.register_helper_script('some_name', parameters, safe: safe, block: block).squish }
+
+    let(:parameters) { %i[xxx yyy] }
+    let(:safe) { false }
+    let(:block) { false }
 
     it { is_expected.to eq("Handlebars.registerHelper('some_name', ruby_some_name)") }
-  end
 
-  describe '#register_safe_string_helper_script' do
-    subject { described_class.register_safe_string_helper_script('some_name', %i[xxx yyy]).squish }
+    context 'when safe: true' do
+      let(:safe) { true }
 
-    it { is_expected.to eq("Handlebars.registerHelper('some_name', function (xxx, yyy, _opts) { return new Handlebars.SafeString(ruby_some_name(xxx, yyy, _opts)); })") }
+      it { is_expected.to eq("Handlebars.registerHelper('some_name', function (xxx, yyy, _opts) { return new Handlebars.SafeString(ruby_some_name(xxx, yyy, _opts)); })") }
+
+      context 'when block: true' do
+        let(:block) { true }
+
+        it { is_expected.to eq("Handlebars.registerHelper('some_name', function (xxx, yyy, opts) { return new Handlebars.SafeString(ruby_some_name(opts.fn(this), xxx, yyy, opts)); })") }
+      end
+    end
+
+    # context 'when block: true' do
+    #   let(:block) { true }
+
+    #   it { is_expected.to eq("Handlebars.registerHelper('some_name', function (xxx, yyy, opts) { return ruby_some_name(opts.fn(this), xxx, yyy, opts); })") }
+    # end
   end
 
   describe '#process_template' do

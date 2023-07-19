@@ -4,6 +4,7 @@ module Handlebarsjs
   # Extend base helper for each of your custom handlebars-helpers
   class BaseHelper
     attr_reader :cmdlet
+    attr_reader :block
     attr_reader :safe
     attr_reader :parameter_names
 
@@ -13,23 +14,34 @@ module Handlebarsjs
     def initialize(cmdlet = nil, safe: nil, parameter_names: nil)
       initialize_cmdlet(cmdlet)
       initialize_safe(safe)
+      initialize_block(block)
       initialize_parameter_names(parameter_names)
     end
 
     class << self
       attr_reader :cmdlet
+      attr_reader :block
       attr_reader :safe
       attr_reader :parameter_names
 
-      def register_cmdlet(cmdlet, safe: false, parameter_names: [])
+      # Register the cmdlet to be used by the helper
+      #
+      # By default, it will register an function expression helper
+      # You can use HTML by setting safe to true
+      #
+      # @param cmdlet [Handlebarsjs::Cmdlet::Base] the cmdlet to be used by the helper
+      # @param block [Boolean] whether or not this is a wrapped block
+      # @param safe [Boolean] whether or not the cmdlet should return HTML
+      # @param parameter_names [Array] the parameter names to be used by the cmdlet
+      def register_cmdlet(cmdlet, block: false, safe: false, parameter_names: [])
         @cmdlet = cmdlet
+        @block = block
         @safe = safe
         @parameter_names = parameter_names
       end
     end
 
-    # If you need to wrap the return value in a specific
-    # Handlebars Type, eg. SafeString, then you can override this method
+    # If you need to wrap the return value then you can override this method
     def wrapper(value)
       value
     end
@@ -52,6 +64,12 @@ module Handlebarsjs
       @safe = safe
       @safe = self.class.safe if @safe.nil? && self.class.safe
       @safe = false if @safe.nil?
+    end
+
+    def initialize_block(block)
+      @block = block
+      @block = self.class.block if @block.nil? && self.class.block
+      @block = false if @block.nil?
     end
 
     def initialize_parameter_names(parameter_names)
