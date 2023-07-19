@@ -1,3 +1,11 @@
+# [0.13.0](https://github.com/klueless-io/handlebarsjs/compare/v0.12.0...v0.13.0) (2023-07-19)
+
+
+### Features
+
+* synchronise versions ([95789d5](https://github.com/klueless-io/handlebarsjs/commit/95789d5566d9df9e6e29b42715cf71a9fe4e36b7))
+* synchronise versions ([4cf212b](https://github.com/klueless-io/handlebarsjs/commit/4cf212bb1274bacf61e13a8491c20860e99193ea))
+
 # [0.12.0](https://github.com/klueless-io/handlebarsjs/compare/v0.11.3...v0.12.0) (2023-07-19)
 
 
