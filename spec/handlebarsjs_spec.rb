@@ -195,6 +195,7 @@ RSpec.describe Handlebarsjs do
       expect(message).to eq('No way forward |I am | no way back')
     end
 
+    # I think this is built into the handlebarsjs library, but I'm not sure
     it 'can omit content' do
       handlebars_template = '{{#omit}}Look at me{{/omit}}'
       context.eval(process_template)
