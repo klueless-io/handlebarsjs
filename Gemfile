@@ -14,16 +14,13 @@ group :development, :test do
   gem 'rubocop'
   gem 'rubocop-rake', require: false
   gem 'rubocop-rspec', require: false
-end
-
-group :test do
   gem 'simplecov', require: false
+
+  # If local dependency
+  if ENV['KLUE_LOCAL_GEMS']&.to_s&.downcase == 'true'
+      puts 'Using Local GEMs'
+      gem 'cmdlet' , path: '../cmdlet'
+  end
+
 end
 
-# If local dependency
-if ENV['KLUE_LOCAL_GEMS']&.to_s&.downcase == 'true'
-  group :development, :test do
-    puts 'Using Local GEMs'
-    gem 'cmdlet' , path: '../cmdlet'
-  end
-end
