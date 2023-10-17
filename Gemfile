@@ -18,9 +18,7 @@ group :development, :test do
 
   # If local dependency
   if ENV['KLUE_LOCAL_GEMS']&.to_s&.downcase == 'true'
-      puts 'Using Local GEMs'
-      gem 'cmdlet' , path: '../cmdlet'
+    puts 'Using Local GEMs'
+    gem 'cmdlet' , path: '../cmdlet'
   end
-
 end
-
