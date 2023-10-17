@@ -1,3 +1,10 @@
+## [0.13.1](https://github.com/klueless-io/handlebarsjs/compare/v0.13.0...v0.13.1) (2023-10-17)
+
+
+### Bug Fixes
+
+* update to use cmdlet 13.1 which fixes activesupport issue in 7.1.1 ([c5e438f](https://github.com/klueless-io/handlebarsjs/commit/c5e438f4e2d1727037694cae3f6bc8034bc5d4fe))
+
 # [0.13.0](https://github.com/klueless-io/handlebarsjs/compare/v0.12.0...v0.13.0) (2023-07-19)
 
 
