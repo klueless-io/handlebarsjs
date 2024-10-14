@@ -1,3 +1,10 @@
+## [0.14.2](https://github.com/klueless-io/handlebarsjs/compare/v0.14.1...v0.14.2) (2024-10-14)
+
+
+### Bug Fixes
+
+* reference chatgpt ([61a9fc6](https://github.com/klueless-io/handlebarsjs/commit/61a9fc673da30b5a498278972b47ade542c02534))
+
 ## [0.14.1](https://github.com/klueless-io/handlebarsjs/compare/v0.14.0...v0.14.1) (2024-10-14)
 
 
