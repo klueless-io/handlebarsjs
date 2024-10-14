@@ -33,7 +33,7 @@ See [project plan](./docs/project-plan.md)
 
 ## Usage
 
-See all [usage examples](./USAGE.md)
+See all [usage examples](./docs/ussage.md)
 
 
 
