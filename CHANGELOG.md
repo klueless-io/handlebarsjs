@@ -1,3 +1,10 @@
+# [0.14.0](https://github.com/klueless-io/handlebarsjs/compare/v0.13.1...v0.14.0) (2024-10-14)
+
+
+### Features
+
+* update usage documentation ([934f252](https://github.com/klueless-io/handlebarsjs/commit/934f252e8ed3816f2d5d20272d42ea338486fbc1))
+
 ## [0.13.1](https://github.com/klueless-io/handlebarsjs/compare/v0.13.0...v0.13.1) (2023-10-17)
 
 
