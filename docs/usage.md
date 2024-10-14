@@ -1,5 +1,7 @@
 # Handlebars and Ruby Helper Documentation Guide
 
+This document was created using: [ChatGPT Canvas](https://chatgpt.com/c/6709d602-409c-8002-8f64-4820d94c031e)
+
 ## Table of Contents
 1. [Introduction](#introduction)
 2. [Installation](#installation)
