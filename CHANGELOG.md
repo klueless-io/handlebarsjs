@@ -1,3 +1,10 @@
+## [0.14.1](https://github.com/klueless-io/handlebarsjs/compare/v0.14.0...v0.14.1) (2024-10-14)
+
+
+### Bug Fixes
+
+* spelling mistake in usage.md file name ([5c0950a](https://github.com/klueless-io/handlebarsjs/commit/5c0950aef607c967f6f9283596cc9b20423685a3))
+
 # [0.14.0](https://github.com/klueless-io/handlebarsjs/compare/v0.13.1...v0.14.0) (2024-10-14)
 
 
